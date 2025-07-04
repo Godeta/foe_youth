@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="locale">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title x-text="currentLanguage === 'fr' ? 'Future Of Europe - Construisons l\'avenir ensemble' : 'Youth Involvement - Building the future together'"></title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js via CDN -->
+    <script defer src="alpine.js"></script>
+    <!-- Google Fonts -->
+    <link href="css/google.css" rel="stylesheet">
+    <!-- Font Awesome pour icônes -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Notre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'sky-blue': '#0EA5E9',
+                'ocean-blue': '#0369A1',
+                'horizon-blue': '#075985',
+                'light-blue': '#BAE6FD',
+                'hope-yellow': '#FDE047',
+              }
+            }
+          }
+        }
+    </script>
+    <!-- Script pour la localisation -->
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('locale', () => ({
+                currentLanguage: 'fr',
+                activeElement: null,
+                elementType: null,
+                
+                // Tous les textes du site dans les deux langues
+                texts: {
+                    'site_title': {
+                        'fr': 'Engagement des jeunes',
+                        'en': 'Youth Involvement'
+                    },
+                    'nav_home': {
+                        'fr': 'Accueil',
+                        'en': 'Home'
+                    },
+                    'nav_illustrations': {
+                        'fr': 'Illustrations',
+                        'en': 'Illustrations'
+                    },
+                    'nav_about': {
+                        'fr': 'À propos de nous',
+                        'en': 'About Us'
+                    },
+                    'hero_title': {
+                        'fr': 'Engagement des jeunes',
+                        'en': 'Youth Involvement'
+                    },
+                    'hero_subtitle': {
+                        'fr': 'Construisons l\'avenir ensemble',
+                        'en': 'Building the future together'
+                    },
+                    'context_title': {
+                        'fr': 'Contexte',
+                        'en': 'Context'
+                    },
+                    'context_content': {
+                        'fr': "Le problème du manque d’implication efficace de la jeunesse dans la vie politique est un cercle vicieux. Il est complexe et a de nombreuses causes mais malgré l’évolution des jeunes et de nos sociétés, la boucle néfaste se perpétue. Aujourd'hui, nous sommes confrontés à des problèmes différents de ceux de nos prédécesseurs, mais la déconnexion sous-jacente entre les voix des jeunes et les processus de prise de décision persiste. Sur ce site, nous allons approfondir notre vision du manque d'implication des jeunes, de ce que représente ce concept de cercle en commençant d’abord avec l’arbre des causes et conséquences de ce problème. Vous trouverez également une page ‘Article’ dans laquelle vous retrouverez notre article complet sur le sujet ainsi qu’une page ‘À propos de nous’ qui nous présente et dans laquelle nous expliquons ce qui nous a poussé à écrire cet article.",
+                        'en': "The problem of the lack of effective involvement of youth in political life is a vicious circle. It is complex and has many causes, but despite the evolution of young people and our societies, the harmful loop perpetuates. Today, we face different problems than our predecessors, but the underlying disconnect between young voices and decision-making processes persists. On this website, we will delve deeper into our vision of the lack of youth involvement, what this concept of circle represents, starting first with the tree of causes and consequences of this problem. You will also find an 'Article' page where you can read our full article on the subject as well as an 'About Us' page that introduces us and explains what drove us to write this article."
+                    },
+                    'tree_title': {
+                        'fr': 'L\'arbre de l\'Engagement des jeunes',
+                        'en': 'The Tree of Youth Engagement'
+                    },
+                    'tree_instruction': {
+                        'fr': 'Cliquez sur les branches (problèmes) ou les racines (solutions) pour en savoir plus',
+                        'en': 'Click on the branches (problems) or roots (solutions) to learn more'
+                    },
+                    'tree_default': {
+                        'fr': 'Explorez les défis et solutions en cliquant sur les branches et racines de l\'arbre',
+                        'en': 'Explore challenges and solutions by clicking on the tree branches and roots'
+                    },
+                    // Branches (Problems)
+                    "title_branch_communication": {
+                    "fr": "Communication",
+                    "en": "Communication"
+                    },
+                    "content_branch_communication": {
+                    "fr": "Pas de communication efficace entre les générations et les acteurs politiques, ce qui entraîne un manque de compréhension mutuelle et renforce les préjugés.",
+                    "en": "No effective communication between generations and political actors, leading to mutual misunderstanding and reinforcing prejudices."
+                    },
+
+                    "title_branch_opportunities": {
+                    "fr": "Opportunités étroites et conservatrices",
+                    "en": "Narrow and conservative opportunities"
+                    },
+                    "content_branch_opportunities": {
+                    "fr": "Les opportunités offertes aux jeunes sont limitées et basées sur des modèles traditionnels, ce qui freine l'innovation et le renouvellement social.",
+                    "en": "The opportunities offered to young people are limited and based on traditional models, which hinders innovation and social renewal."
+                    },
+
+                    "title_branch_future_issues": {
+                    "fr": "Problèmes futurs",
+                    "en": "Future problems"
+                    },
+                    "content_branch_future_issues": {
+                    "fr": "Des problèmes plus importants apparaîtront à l'avenir car la génération qui ne se mobilise pas aujourd'hui sera celle qui prendra les décisions demain.",
+                    "en": "More serious problems will emerge in the future because the generation that is disengaged today will be the one making decisions tomorrow."
+                    },
+
+                    "title_branch_polarization": {
+                    "fr": "Polarisation",
+                    "en": "Polarization"
+                    },
+                    "content_branch_polarization": {
+                    "fr": "La polarisation grandissante alimentée par les réseaux sociaux crée des divisions profondes et limite le dialogue constructif.",
+                    "en": "Growing polarization fueled by social media creates deep divisions and limits constructive dialogue."
+                    },
+
+                    "title_branch_alienation": {
+                    "fr": "Aliénation",
+                    "en": "Alienation"
+                    },
+                    "content_branch_alienation": {
+                    "fr": "Aliénation de la politique par rapport aux jeunes : ces derniers n’obtiennent jamais de retour sur leurs opinions, ce qui les éloigne toujours plus.",
+                    "en": "Alienation of politics from young people: they never get feedback on their opinions, which pushes them further away."
+                    },
+
+                    "title_branch_mental_health": {
+                    "fr": "Santé mentale",
+                    "en": "Mental health"
+                    },
+                    "content_branch_mental_health": {
+                    "fr": "Des problèmes de santé mentale apparaissent car beaucoup ressentent qu’il est impossible de changer les choses et qu’ils n’ont aucun pouvoir.",
+                    "en": "Mental health issues arise because many feel it is impossible to change things and that they have no power."
+                    },
+
+                    "title_branch_innovation": {
+                    "fr": "Manque d'innovation",
+                    "en": "Lack of innovation"
+                    },
+                    "content_branch_innovation": {
+                    "fr": "Le manque d’innovation freine les réponses nouvelles aux défis actuels, rendant les solutions obsolètes.",
+                    "en": "The lack of innovation slows down new responses to current challenges, making solutions obsolete."
+                    },
+
+                    "title_branch_emigration": {
+                    "fr": "Émigration",
+                    "en": "Emigration"
+                    },
+                    "content_branch_emigration": {
+                    "fr": "Les jeunes partent à l'étranger car ils pensent qu'il est inutile d’essayer de changer les choses dans leur pays.",
+                    "en": "Young people leave the country because they feel it is pointless to try to change things at home."
+                    },
+
+                    "title_branch_housing": {
+                    "fr": "Logement",
+                    "en": "Housing"
+                    },
+                    "content_branch_housing": {
+                    "fr": "Les jeunes peinent à trouver un logement, car la richesse est concentrée chez les générations plus âgées et les opportunités se raréfient.",
+                    "en": "Young people struggle to find housing because wealth is concentrated among older generations and opportunities are scarce."
+                    },
+
+                    "title_branch_abstention": {
+                    "fr": "Abstention",
+                    "en": "Abstention"
+                    },
+                    "content_branch_abstention": {
+                    "fr": "Beaucoup s’abstiennent de voter car ils n’y voient pas de sens ni d’impact concret.",
+                    "en": "Many abstain from voting because they see no meaning or tangible impact in it."
+                    },
+
+                    "title_branch_resignation": {
+                    "fr": "Résignation",
+                    "en": "Resignation"
+                    },
+                    "content_branch_resignation": {
+                    "fr": "Les jeunes finissent par accepter des situations qu’ils rejettent, se coupant de toute implication.",
+                    "en": "Young people end up accepting situations they reject, cutting themselves off from any involvement."
+                    },
+
+                    "title_branch_inequalities": {
+                    "fr": "Inégalités",
+                    "en": "Inequalities"
+                    },
+                    "content_branch_inequalities": {
+                    "fr": "Les inégalités continuent de se creuser et renforcent le sentiment d’injustice générationnelle.",
+                    "en": "Inequalities keep growing and reinforce the feeling of generational injustice."
+                    },
+
+                    "title_branch_vicious_circle": {
+                    "fr": "Cercle vicieux",
+                    "en": "Vicious circle"
+                    },
+                    "content_branch_vicious_circle": {
+                    "fr": "Le problème est un cercle vicieux qui se reproduit encore et encore.",
+                    "en": "The problem is a vicious circle that repeats over and over."
+                    },
+
+                    // Roots (Causes)
+                    "title_root_system": { "fr": "Système en besoin de changement", "en": "System in need of change" },
+                    "content_root_system": { "fr": "Système en besoin de changement (par exemple, le vote blanc en France : si 90% des gens votent pour aucun candidat et 10% pour un seul, il est élu mais ne représente pas légitimement le peuple)", "en": "" },
+                    "title_root_literacy": { "fr": "Manque d'éducation politique", "en": "Lack of political literacy" },
+                    "content_root_literacy": { "fr": "Manque d'éducation politique, information sur comment participer et comment les choses fonctionnent", "en": "" },
+                    "title_root_role_models": { "fr": "Manque de modèles", "en": "Lack of role models" },
+                    "content_root_role_models": { "fr": "Manque de modèles", "en": "" },
+                    "title_root_stereotypes_youth": { "fr": "Stéréotypes sur les jeunes", "en": "Stereotypes about youth" },
+                    "content_root_stereotypes_youth": { "fr": "Stéréotypes sur les jeunes (paresseux, faibles, fragiles… \"comme une boule de cristal\" dit un proverbe espagnol sur les jeunes)", "en": "" },
+                    "title_root_stereotypes_politics": { "fr": "Stéréotypes sur la politique", "en": "Stereotypes about politics" },
+                    "content_root_stereotypes_politics": { "fr": "Stéréotypes sur la politique (pas pour moi, seulement pour les personnes avec une carrière spécifique, corrompue…)", "en": "" },
+                    "title_root_elitism": { "fr": "Élitisme", "en": "Elitism" },
+                    "content_root_elitism": { "fr": "Élitisme (seulement les milieux privilégiés, d'une famille politique, école…)", "en": "" },
+                    "title_root_media": { "fr": "Médias", "en": "Media" },
+                    "content_root_media": { "fr": "Médias (réseaux sociaux vs télévision, nous sommes séparés, ne regardons pas les mêmes, nous opposons les uns aux autres)", "en": "" },
+                    "title_root_tradition": { "fr": "Tradition", "en": "Tradition" },
+                    "content_root_tradition": { "fr": "Tradition → Cela a toujours été comme ça, le manque de participation a toujours existé, attendez votre tour…). Cela crée un cercle qui se répète", "en": "" },
+                    'footer_credit': {
+                        'fr': 'Engagement des jeunes - Construisons l\'avenir ensemble',
+                        'en': 'Youth Involvement - Building the future together'
+                    },
+                    'footer_copyright': {
+                        'fr': '2025 - Tous droits réservés',
+                        'en': '2025 - All rights reserved'
+                    }
+                },
+                
+                // Méthode pour obtenir le texte dans la langue actuelle
+                t(key) {
+                    return this.texts[key][this.currentLanguage];
+                },
+                
+                // Méthode pour changer de langue
+                toggleLanguage() {
+                    this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
+                    document.documentElement.lang = this.currentLanguage;
+                },
+
+                // Méthode pour activer un élément de l'arbre
+                activateElement(type, element) {
+                    if (this.activeElement === element && this.elementType === type) {
+                        this.activeElement = null;
+                        this.elementType = null;
+                    } else {
+                        this.activeElement = element;
+                        this.elementType = type;
+                    }
+                }
+            }));
+        });
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header fixe -->
+    <header class="fixed w-full bg-horizon-blue bg-opacity-80 text-white z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-2xl" x-text="t('site_title')">Engagement des jeunes</a>
+            
+            <!-- Navigation desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="aPropos.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                
+                <!-- Sélecteur de langue -->
+                <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? 'FR' : 'EN'"></span>
+                </button>
+            </nav>
+            
+            <!-- Bouton menu mobile -->
+            <button class="mobile-menu-button md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
+            <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
+                <a href="index.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="about.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                
+                <!-- Sélecteur de langue mobile -->
+                <button @click="toggleLanguage()" class="my-3 px-4 py-2 rounded-full bg-white text-horizon-blue self-start hover:bg-hope-yellow transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 x-text="t('hero_title')">Engagement des jeunes</h1>
+            <p x-text="t('hero_subtitle')">Construisons l'avenir ensemble</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- Section contexte -->
+        <section class="content-section">
+            <h2 class="section-title" x-text="t('context_title')">Contexte</h2>
+            <div class="max-w-4xl mx-auto text-gray-700">
+                <p class="text-lg leading-relaxed" x-text="t('context_content')">L'engagement des jeunes est essentiel pour construire un avenir durable et équitable...</p>
+            </div>
+        </section>
+
+        <!-- Section arbre interactif -->
+        <section class="content-section">
+            <h2 class="section-title" x-text="t('tree_title')">L'arbre de l'Engagement des jeunes</h2>
+            <p class="text-center text-gray-600 mb-8" x-text="t('tree_instruction')">Cliquez sur les branches (problèmes) ou les racines (solutions) pour en savoir plus</p>
+            <!-- Contenu par défaut -->
+            <div x-show="!activeElement" class="tree-default-message">
+                <p x-text="t('tree_default')">Explorez les défis et solutions en cliquant sur les branches et racines de l'arbre</p>
+            </div>
+            <!-- Contenu des branches (problèmes) -->
+            <div x-show="elementType === 'branch' && activeElement === 'communication'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_communication')"></h3>
+                <p x-text="t('content_branch_communication')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'vicious_circle'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_vicious_circle')"></h3>
+                <p x-text="t('content_branch_vicious_circle')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'inequalities'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_inequalities')"></h3>
+                <p x-text="t('content_branch_inequalities')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'resignation'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_resignation')"></h3>
+                <p x-text="t('content_branch_resignation')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'abstention'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_abstention')"></h3>
+                <p x-text="t('content_branch_abstention')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'housing'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_housing')"></h3>
+                <p x-text="t('content_branch_housing')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'emigration'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_emigration')"></h3>
+                <p x-text="t('content_branch_emigration')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'innovation'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_innovation')"></h3>
+                <p x-text="t('content_branch_innovation')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'mental_health'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_mental_health')"></h3>
+                <p x-text="t('content_branch_mental_health')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'alienation'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_alienation')"></h3>
+                <p x-text="t('content_branch_alienation')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'polarization'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_polarization')"></h3>
+                <p x-text="t('content_branch_polarization')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'future_issues'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_future_issues')"></h3>
+                <p x-text="t('content_branch_future_issues')"></p>
+              </div>
+              <div x-show="elementType === 'branch' && activeElement === 'opportunities'" class="tree-content">
+                <h3 class="text-xl font-bold text-red-600 mb-3" x-text="t('title_branch_opportunities')"></h3>
+                <p x-text="t('content_branch_opportunities')"></p>
+              </div>                                                                                                                                                                                
+
+            <div class="tree-container">
+                <svg viewBox="0 0 800 800" class="w-full max-w-4xl mx-auto">
+                    <!-- Ground -->
+                    <rect x="0" y="500" width="800" height="10" fill="#654321" />
+                    <rect x="0" y="510" width="800" height="290" fill="#f0ead6" />
+                  
+                    <!-- Big Tree Trunk Shape -->
+                    <path d="M382 300 Q382.4551380902051 308.33333333333337 382.9102761804101 316.6666666666667 Q382.66347142353834 325 382.41666666666663 333.3333333333333 Q382.1017135623731 341.66666666666663 381.7867604580795 350 Q382.0420977032753 358.3333333333333 382.2974349484711 366.66666666666663 Q382.43473579348034 375 382.5720366384896 383.33333333333337 Q381.9110183192448 391.6666666666667 381.25 400 Q380.45268498591145 408.33333333333337 379.65536997182295 416.6666666666667 Q379.39306912681366 425 379.1307682818044 433.3333333333333 Q378.7504310366087 441.66666666666663 378.3700937914129 450 Q377.2267135623731 458.33333333333337 376.08333333333337 466.6666666666667 Q374.8718047568717 475 373.66027618041005 483.3333333333333 Q373.080138090205 491.66666666666663 372.5 500 L428 500 Q426.96152857646166 491.66666666666663 425.92305715292326 483.3333333333333 Q424.7948619097949 475 423.66666666666663 466.6666666666667 Q422.7316197709602 458.33333333333337 421.7965728752538 450 Q421.2079022967247 441.66666666666663 420.6192317181956 433.3333333333333 Q420.273597539853 425 419.92796336151036 416.6666666666667 Q419.5889816807552 408.33333333333337 419.25 400 Q418.79731501408855 391.6666666666667 418.3446300281771 383.33333333333337 Q417.898597539853 375 417.4525650515289 366.66666666666663 Q417.2495689633913 358.3333333333333 417.0465728752538 350 Q417.1899531042936 341.66666666666663 417.33333333333337 333.3333333333333 Q417.669861909795 325 418.0063904862566 316.6666666666667 Q418.2531952431283 308.33333333333337 418.5 300 Z" fill="#8B4513"/>
+                  
+                    <!-- Branches -->
+                    <!-- Branch: Communication -->
+                    <g class="branch" @click="activateElement('branch', 'communication')" :class="{ 'active': activeElement==='communication' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 300 220, 250 150" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="250" cy="150" r="20" :fill="activeElement==='communication' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="250" y="130" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_communication')"></text>
+                    </g>
+                    
+                    <!-- Branch: Opportunities -->
+                    <g class="branch" @click="activateElement('branch', 'opportunities')" :class="{ 'active': activeElement==='opportunities' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 500 220, 550 180" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="550" cy="180" r="20" :fill="activeElement==='opportunities' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="550" y="160" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_opportunities')"></text>
+                    </g>
+                    
+                    <!-- Branch: Future Issues -->
+                    <g class="branch" @click="activateElement('branch', 'future_issues')" :class="{ 'active': activeElement==='future_issues' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 200 200, 160 120" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="160" cy="120" r="20" :fill="activeElement==='future_issues' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="160" y="100" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_future_issues')"></text>
+                    </g>
+                    
+                    <!-- Branch: Polarization -->
+                    <g class="branch" @click="activateElement('branch', 'polarization')" :class="{ 'active': activeElement==='polarization' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 600 200, 650 150" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="650" cy="150" r="20" :fill="activeElement==='polarization' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="650" y="130" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_polarization')"></text>
+                    </g>
+                    
+                    <!-- Branch: Alienation -->
+                    <g class="branch" @click="activateElement('branch', 'alienation')" :class="{ 'active': activeElement==='alienation' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 300 150, 250 100" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="250" cy="100" r="20" :fill="activeElement==='alienation' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="250" y="80" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_alienation')"></text>
+                    </g>
+                    
+                    <!-- Branch: Mental Health -->
+                    <g class="branch" @click="activateElement('branch', 'mental_health')" :class="{ 'active': activeElement==='mental_health' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 500 150, 550 100" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="550" cy="100" r="20" :fill="activeElement==='mental_health' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="550" y="80" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_mental_health')"></text>
+                    </g>
+                    
+                    <!-- Branch: Innovation -->
+                    <g class="branch" @click="activateElement('branch', 'innovation')" :class="{ 'active': activeElement==='innovation' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 400 150, 400 100" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="400" cy="100" r="20" :fill="activeElement==='innovation' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="400" y="80" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_innovation')"></text>
+                    </g>
+                    
+                    <!-- Branch: Emigration -->
+                    <g class="branch" @click="activateElement('branch', 'emigration')" :class="{ 'active': activeElement==='emigration' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 150 200, 100 150" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="100" cy="150" r="20" :fill="activeElement==='emigration' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="100" y="130" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_emigration')"></text>
+                    </g>
+                    
+                    <!-- Branch: Housing -->
+                    <g class="branch" @click="activateElement('branch', 'housing')" :class="{ 'active': activeElement==='housing' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 700 200, 750 150" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="750" cy="150" r="20" :fill="activeElement==='housing' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="750" y="130" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_housing')"></text>
+                    </g>
+                    
+                    <!-- Branch: Abstention -->
+                    <g class="branch" @click="activateElement('branch', 'abstention')" :class="{ 'active': activeElement==='abstention' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 200 250, 150 200" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="150" cy="200" r="20" :fill="activeElement==='abstention' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="150" y="180" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_abstention')"></text>
+                    </g>
+                    
+                    <!-- Branch: Resignation -->
+                    <g class="branch" @click="activateElement('branch', 'resignation')" :class="{ 'active': activeElement==='resignation' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 600 250, 650 200" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="650" cy="200" r="20" :fill="activeElement==='resignation' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="650" y="180" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_resignation')"></text>
+                    </g>
+                    
+                    <!-- Branch: Inequalities -->
+                    <g class="branch" @click="activateElement('branch', 'inequalities')" :class="{ 'active': activeElement==='inequalities' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 300 250, 250 200" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="250" cy="200" r="20" :fill="activeElement==='inequalities' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="250" y="180" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_inequalities')"></text>
+                    </g>
+                    
+                    <!-- Branch: Vicious Circle -->
+                    <g class="branch" @click="activateElement('branch', 'vicious_circle')" :class="{ 'active': activeElement==='vicious_circle' && elementType==='branch' }">
+                        <path d="M400 300 C400 250, 500 250, 380 200" stroke="#8B4513" stroke-width="3" fill="none"/>
+                        <circle cx="380" cy="200" r="20" :fill="activeElement==='vicious_circle' && elementType==='branch' ? '#059669' : '#EF4444'" />
+                        <text x="380" y="180" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_branch_vicious_circle')"></text>
+                    </g>  
+                  
+                    <!-- Roots -->
+                    <g class="root" @click="activateElement('root', 'education')" :class="{ 'active': activeElement==='education' && elementType==='root' }">
+                      <path d="M400 500 C400 550, 350 580, 300 630" stroke="#A0522D" stroke-width="4" stroke-dasharray="4,2" fill="none"/>
+                      <circle cx="300" cy="630" r="20" :fill="activeElement==='education' && elementType==='root' ? '#FDE047' : '#0EA5E9'" />
+                      <text x="300" y="655" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('education_title')"></text>
+                    </g>
+                  
+                    <g class="root" @click="activateElement('root', 'participation')" :class="{ 'active': activeElement==='participation' && elementType==='root' }">
+                      <path d="M400 500 C400 550, 450 580, 500 630" stroke="#A0522D" stroke-width="4" stroke-dasharray="4,2" fill="none"/>
+                      <circle cx="500" cy="630" r="20" :fill="activeElement==='participation' && elementType==='root' ? '#FDE047' : '#0EA5E9'" />
+                      <text x="500" y="655" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('participation_title')"></text>
+                    </g>
+
+                    <!-- Root: System -->
+                    <g class="root" @click="activateElement('root', 'system')" :class="{ 'active': activeElement==='system' && elementType==='root' }">
+                        <path d="M400 500 C400 550, 250 580, 200 630" stroke="#A0522D" stroke-width="4" stroke-dasharray="4,2" fill="none"/>
+                        <circle cx="200" cy="630" r="20" :fill="activeElement==='system' && elementType==='root' ? '#FDE047' : '#0EA5E9'" />
+                        <text x="200" y="655" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_root_system')"></text>
+                    </g>
+                    
+                    <!-- Root: Literacy -->
+                    <g class="root" @click="activateElement('root', 'literacy')" :class="{ 'active': activeElement==='literacy' && elementType==='root' }">
+                        <path d="M400 500 C400 550, 600 580, 650 630" stroke="#A0522D" stroke-width="4" stroke-dasharray="4,2" fill="none"/>
+                        <circle cx="650" cy="630" r="20" :fill="activeElement==='literacy' && elementType==='root' ? '#FDE047' : '#0EA5E9'" />
+                        <text x="650" y="655" text-anchor="middle" fill="#000" font-size="12" pointer-events="none" x-text="t('title_root_literacy')"></text>
+                    </g>
+  
+                  </svg>
+                  
+                  
+                  
+
+                <!-- Zone d'affichage du contenu -->
+                <div class="tree-content-area">
+                    <!-- Contenu par défaut -->
+                    <div x-show="!activeElement" class="tree-default-message">
+                        <p x-text="t('tree_default')">Explorez les défis et solutions en cliquant sur les branches et racines de l'arbre</p>
+                    </div>
+                    
+                    <!-- Contenu des racines (solutions) -->
+                    <div x-show="elementType === 'root' && activeElement === 'education'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('education_title')">Éducation inclusive</h3>
+                        <p x-text="t('education_content')">Une éducation de qualité, accessible à tous...</p>
+                    </div>
+                    
+                    <div x-show="elementType === 'root' && activeElement === 'participation'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('participation_title')">Participation civique</h3>
+                        <p x-text="t('participation_content')">Encourager la participation active des jeunes...</p>
+                    </div>
+                    
+                    <div x-show="elementType === 'root' && activeElement === 'innovation'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('innovation_title')">Innovation sociale</h3>
+                        <p x-text="t('innovation_content')">Les jeunes sont des moteurs d'innovation sociale...</p>
+                    </div>
+                    
+                    <div x-show="elementType === 'root' && activeElement === 'mentorship'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('mentorship_title')">Mentorat</h3>
+                        <p x-text="t('mentorship_content')">Les programmes de mentorat créent des ponts...</p>
+                    </div>
+                    
+                    <div x-show="elementType === 'root' && activeElement === 'global'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('global_title')">Coopération internationale</h3>
+                        <p x-text="t('global_content')">Les défis actuels sont globaux et nécessitent...</p>
+                    </div>
+                    <div x-show="elementType === 'root' && activeElement === 'system'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('title_root_system')"></h3>
+                        <p x-text="t('content_root_system')"></p>
+                      </div>
+                      
+                      <div x-show="elementType === 'root' && activeElement === 'literacy'" class="tree-content">
+                        <h3 class="text-xl font-bold text-sky-blue mb-3" x-text="t('title_root_literacy')"></h3>
+                        <p x-text="t('content_root_literacy')"></p>
+                      </div>
+                      
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-horizon-blue to-ocean-blue text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4" x-text="t('footer_credit')">Engagement des jeunes - Construisons l'avenir ensemble</h3>
+            <p x-text="t('footer_copyright')">2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>

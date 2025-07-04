@@ -1,0 +1,313 @@
+/* Styles globaux */
+:root {
+  --sky-blue: #0EA5E9;
+  --ocean-blue: #0369A1;
+  --horizon-blue: #075985;
+  --light-blue: #BAE6FD;
+  --hope-yellow: #FDE047;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --text-gray: #334155;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-gray);
+  background-color: var(--light-gray);
+  line-height: 1.6;
+}
+
+/* Header styling */
+header {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  padding: 0.5rem 0;
+  background-color: rgba(7, 89, 133, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+  position: relative;
+}
+
+header a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--hope-yellow);
+  transition: width 0.3s ease;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+.language-selector {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.language-selector:hover {
+  background-color: var(--hope-yellow);
+  border-color: var(--hope-yellow);
+  color: var(--horizon-blue);
+  transform: translateY(-2px);
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(7, 89, 133, 0.8), rgba(3, 105, 161, 0.8)), 
+              url('https://images.unsplash.com/photo-1560247534-2d4582678969') center/cover;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main content sections */
+main {
+  position: relative;
+  z-index: 1;
+  margin-top: -5rem;
+}
+
+.content-section {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  margin-bottom: 4rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.content-section:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  position: relative;
+  color: var(--ocean-blue);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background-color: var(--hope-yellow);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Tree Container */
+
+
+/* Content display area */
+.tree-content-area {
+  margin-top: 2rem;
+  min-height: 150px;
+  position: relative;
+}
+
+.tree-content {
+  background: linear-gradient(135deg, var(--light-blue), white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--sky-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tree-default-message {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  color: var(--ocean-blue);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--horizon-blue), var(--ocean-blue));
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--hope-yellow), var(--sky-blue), var(--hope-yellow));
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .content-section {
+    padding: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .branches-container,
+  .roots-container {
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .branch-icon,
+  .root-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .branch-label,
+  .root-label {
+    font-size: 0.8rem;
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .branches-container,
+  .roots-container {
+    height: 120px;
+  }
+
+  .branch:nth-child(1) { left: 5%; }
+  .branch:nth-child(2) { left: 25%; }
+  .branch:nth-child(4) { right: 25%; }
+  .branch:nth-child(5) { right: 5%; }
+
+  .root:nth-child(1) { left: 5%; }
+  .root:nth-child(2) { left: 25%; }
+  .root:nth-child(4) { right: 25%; }
+  .root:nth-child(5) { right: 5%; }
+}
+
+/* Mobile menu styling */
+.mobile-menu {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-button {
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-button:hover {
+  transform: rotate(90deg);
+}
+
+/* Tree design see line 179 */
+svg g:hover circle {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+

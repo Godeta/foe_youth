@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="locale">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title x-text="currentLanguage === 'fr' ? 'À propos de nous - Engagement des jeunes' : 'About Us - Youth Engagement'"></title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js via CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'sky-blue': '#0EA5E9',
+                'ocean-blue': '#0369A1',
+                'horizon-blue': '#075985',
+                'light-blue': '#BAE6FD',
+                'hope-yellow': '#FDE047',
+              },
+              fontFamily: {
+                'sans': ['Poppins', 'sans-serif'],
+              }
+            }
+          }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #075985 0%, #0369A1 50%, #0EA5E9 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        .team-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #0369A1;
+            margin: 1rem 0;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .team-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: #0EA5E9;
+            position: absolute;
+            left: -1rem;
+            top: -0.5rem;
+            font-family: serif;
+        }
+        
+        .team-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: #0EA5E9;
+            position: absolute;
+            right: -1rem;
+            bottom: -1rem;
+            font-family: serif;
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #075985;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            font-size: 1rem;
+            color: #0EA5E9;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .team-description {
+            color: #6B7280;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #075985;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-shapes::before,
+        .floating-shapes::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-shapes::before {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: -10s;
+        }
+        
+        .floating-shapes::after {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .team-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('locale', () => ({
+                currentLanguage: 'fr',
+                
+                texts: {
+                    'site_title': {
+                        'fr': 'Engagement des jeunes',
+                        'en': 'Youth Involvement'
+                    },
+                    'nav_home': {
+                        'fr': 'Accueil',
+                        'en': 'Home'
+                    },
+                    'nav_illustrations': {
+                        'fr': 'Illustrations',
+                        'en': 'Illustrations'
+                    },
+                    'nav_about': {
+                        'fr': 'À propos',
+                        'en': 'About Us'
+                    },
+                    'about_hero_title': {
+                        'fr': 'Notre Équipe',
+                        'en': 'Our Team'
+                    },
+                    'about_hero_subtitle': {
+                        'fr': 'Passionnés par l\'avenir des jeunes',
+                        'en': 'Passionate about youth\'s future'
+                    },
+                    'about_section_title': {
+                        'fr': 'Rencontrez nos experts',
+                        'en': 'Meet our experts'
+                    },
+                    'marie_name': {
+                        'fr': 'Marie Dubois',
+                        'en': 'Marie Dubois'
+                    },
+                    'marie_role': {
+                        'fr': 'Directrice des programmes jeunesse',
+                        'en': 'Youth Programs Director'
+                    },
+                    'marie_quote': {
+                        'fr': 'Chaque jeune a le potentiel de changer le monde, notre rôle est de lui donner les clés.',
+                        'en': 'Every young person has the potential to change the world, our role is to give them the keys.'
+                    },
+                    'marie_description': {
+                        'fr': 'Avec plus de 15 ans d\'expérience dans l\'accompagnement des jeunes, Marie développe des programmes innovants qui permettent aux nouvelles générations de s\'épanouir et de s\'engager activement dans la société. Elle croit fermement en l\'importance de l\'éducation inclusive et de l\'autonomisation des jeunes.',
+                        'en': 'With over 15 years of experience in youth support, Marie develops innovative programs that enable new generations to flourish and actively engage in society. She firmly believes in the importance of inclusive education and youth empowerment.'
+                    },
+                    'ahmed_name': {
+                        'fr': 'Ahmed Benali',
+                        'en': 'Ahmed Benali'
+                    },
+                    'ahmed_role': {
+                        'fr': 'Spécialiste en innovation sociale',
+                        'en': 'Social Innovation Specialist'
+                    },
+                    'ahmed_quote': {
+                        'fr': 'L\'innovation naît de la diversité des perspectives et de l\'audace de repenser le possible.',
+                        'en': 'Innovation is born from diversity of perspectives and the boldness to rethink what\'s possible.'
+                    },
+                    'ahmed_description': {
+                        'fr': 'Ahmed accompagne les jeunes entrepreneurs sociaux dans le développement de leurs projets d\'impact. Diplômé en sciences sociales et passionné par les nouvelles technologies, il aide à créer des ponts entre innovation et justice sociale pour construire un avenir plus équitable.',
+                        'en': 'Ahmed supports young social entrepreneurs in developing their impact projects. With a degree in social sciences and a passion for new technologies, he helps create bridges between innovation and social justice to build a more equitable future.'
+                    },
+                    'elena_name': {
+                        'fr': 'Elena Rodriguez',
+                        'en': 'Elena Rodriguez'
+                    },
+                    'elena_role': {
+                        'fr': 'Coordinatrice des partenariats internationaux',
+                        'en': 'International Partnerships Coordinator'
+                    },
+                    'elena_quote': {
+                        'fr': 'Les défis sont globaux, les solutions doivent l\'être aussi. Ensemble, nous sommes plus forts.',
+                        'en': 'Challenges are global, solutions must be too. Together, we are stronger.'
+                    },
+                    'elena_description': {
+                        'fr': 'Elena coordonne les échanges internationaux et développe des partenariats stratégiques avec des organisations de jeunesse à travers le monde. Sa vision multiculturelle et son expérience diplomatique permettent de créer des synergies internationales pour l\'engagement des jeunes.',
+                        'en': 'Elena coordinates international exchanges and develops strategic partnerships with youth organizations worldwide. Her multicultural vision and diplomatic experience enable the creation of international synergies for youth engagement.'
+                    },
+                    'lucas_name': {
+                        'fr': 'Lucas Martin',
+                        'en': 'Lucas Martin'
+                    },
+                    'lucas_role': {
+                        'fr': 'Expert en santé mentale des jeunes',
+                        'en': 'Youth Mental Health Expert'
+                    },
+                    'lucas_quote': {
+                        'fr': 'Prendre soin de sa santé mentale, c\'est investir dans son avenir et celui de sa communauté.',
+                        'en': 'Taking care of your mental health is investing in your future and that of your community.'
+                    },
+                    'lucas_description': {
+                        'fr': 'Psychologue clinicien spécialisé dans l\'accompagnement des adolescents et jeunes adultes, Lucas développe des approches innovantes pour le bien-être mental. Il sensibilise aux enjeux de santé mentale et forme des intervenants jeunesse à travers des programmes de prévention adaptés.',
+                        'en': 'Clinical psychologist specialized in supporting adolescents and young adults, Lucas develops innovative approaches to mental wellness. He raises awareness about mental health issues and trains youth workers through adapted prevention programs.'
+                    },
+                    'fatima_name': {
+                        'fr': 'Fatima Al-Zahra',
+                        'en': 'Fatima Al-Zahra'
+                    },
+                    'fatima_role': {
+                        'fr': 'Responsable éducation et formation',
+                        'en': 'Education and Training Manager'
+                    },
+                    'fatima_quote': {
+                        'fr': 'L\'éducation est l\'arme la plus puissante pour changer le monde et libérer les potentiels.',
+                        'en': 'Education is the most powerful weapon to change the world and unleash potential.'
+                    },
+                    'fatima_description': {
+                        'fr': 'Fatima conçoit et met en œuvre des programmes éducatifs innovants qui préparent les jeunes aux défis du 21e siècle. Ancienne enseignante et formatrice, elle développe des méthodes pédagogiques interactives qui favorisent l\'autonomie et la pensée critique des apprenants.',
+                        'en': 'Fatima designs and implements innovative educational programs that prepare young people for 21st-century challenges. A former teacher and trainer, she develops interactive pedagogical methods that promote learner autonomy and critical thinking.'
+                    },
+                    'tomoko_name': {
+                        'fr': 'Tomoko Sato',
+                        'en': 'Tomoko Sato'
+                    },
+                    'tomoko_role': {
+                        'fr': 'Analyste en transformation numérique',
+                        'en': 'Digital Transformation Analyst'
+                    },
+                    'tomoko_quote': {
+                        'fr': 'La technologie doit servir l\'humain, pas l\'inverse. Créons un numérique inclusif et éthique.',
+                        'en': 'Technology should serve humans, not the other way around. Let\'s create inclusive and ethical digital solutions.'
+                    },
+                    'tomoko_description': {
+                        'fr': 'Tomoko aide les jeunes à développer leurs compétences numériques tout en réfléchissant aux enjeux éthiques des nouvelles technologies. Ingénieure en informatique reconvertie dans l\'éducation, elle œuvre pour réduire la fracture numérique et promouvoir un usage responsable du digital.',
+                        'en': 'Tomoko helps young people develop their digital skills while reflecting on the ethical issues of new technologies. A computer engineer turned educator, she works to reduce the digital divide and promote responsible use of digital technology.'
+                    },
+                    'sofia_name': {
+                        'fr': 'Sofia Andersson',
+                        'en': 'Sofia Andersson'
+                    },
+                    'sofia_role': {
+                        'fr': 'Militante pour le climat et l\'environnement',
+                        'en': 'Climate and Environmental Activist'
+                    },
+                    'sofia_quote': {
+                        'fr': 'Il n\'y a pas de planète B. Agissons maintenant pour préserver l\'avenir de nos enfants.',
+                        'en': 'There is no planet B. Let\'s act now to preserve our children\'s future.'
+                    },
+                    'sofia_description': {
+                        'fr': 'Sofia mobilise les jeunes autour des enjeux climatiques et environnementaux. Militante passionnée et oratrice engagée, elle organise des campagnes de sensibilisation et accompagne les initiatives écologiques portées par les jeunes pour construire un monde plus durable.',
+                        'en': 'Sofia mobilizes young people around climate and environmental issues. A passionate activist and committed speaker, she organizes awareness campaigns and supports ecological initiatives led by young people to build a more sustainable world.'
+                    },
+                    'david_name': {
+                        'fr': 'David Thompson',
+                        'en': 'David Thompson'
+                    },
+                    'david_role': {
+                        'fr': 'Coordinateur des programmes de mentorat',
+                        'en': 'Mentorship Programs Coordinator'
+                    },
+                    'david_quote': {
+                        'fr': 'Le mentorat, c\'est transmettre l\'expérience tout en apprenant de la fraîcheur des nouvelles générations.',
+                        'en': 'Mentoring is about sharing experience while learning from the freshness of new generations.'
+                    },
+                    'david_description': {
+                        'fr': 'David développe et coordonne les programmes de mentorat qui connectent les jeunes avec des professionnels expérimentés. Fort de son expérience en ressources humaines et en développement personnel, il crée des liens intergénérationnels qui favorisent l\'épanouissement professionnel et personnel des jeunes.',
+                        'en': 'David develops and coordinates mentorship programs that connect young people with experienced professionals. With his experience in human resources and personal development, he creates intergenerational connections that promote professional and personal growth for young people.'
+                    },
+                    'footer_credit': {
+                        'fr': 'Engagement des jeunes - Construisons l\'avenir ensemble',
+                        'en': 'Youth Involvement - Building the future together'
+                    },
+                    'footer_copyright': {
+                        'fr': '2025 - Tous droits réservés',
+                        'en': '2025 - All rights reserved'
+                    }
+                },
+                
+                t(key) {
+                    return this.texts[key][this.currentLanguage];
+                },
+                
+                toggleLanguage() {
+                    this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
+                    document.documentElement.lang = this.currentLanguage;
+                }
+            }));
+        });
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-horizon-blue bg-opacity-80 text-white z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-2xl" x-text="t('site_title')">Engagement des jeunes</a>
+            
+            <!-- Navigation desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="about.html" class="hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
+                
+                <!-- Language selector -->
+                <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? 'FR' : 'EN'"></span>
+                </button>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-button md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
+            <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
+                <a href="index.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="about.html" class="py-3 hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
+                
+                <button @click="toggleLanguage()" class="my-3 px-4 py-2 rounded-full bg-white text-horizon-blue self-start hover:bg-hope-yellow transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-shapes"></div>
+        <div class="hero-content">
+            <h1 x-text="t('about_hero_title')">Notre Équipe</h1>
+            <p x-text="t('about_hero_subtitle')">Passionnés par l'avenir des jeunes</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+        <h2 class="section-title" x-text="t('about_section_title')">Rencontrez nos experts</h2>
+        
+        <!-- Team Member 1 - Marie Dubois (Image Left) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:mr-8">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Marie Dubois" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('marie_name')">Marie Dubois</h3>
+                    <p class="team-role" x-text="t('marie_role')">Directrice des programmes jeunesse</p>
+                    <p class="team-quote" x-text="t('marie_quote')">Chaque jeune a le potentiel de changer le monde, notre rôle est de lui donner les clés.</p>
+                    <p class="team-description" x-text="t('marie_description')">Avec plus de 15 ans d'expérience dans l'accompagnement des jeunes...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 - Ahmed Benali (Image Right) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row-reverse items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:ml-8">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Ahmed Benali" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('ahmed_name')">Ahmed Benali</h3>
+                    <p class="team-role" x-text="t('ahmed_role')">Spécialiste en innovation sociale</p>
+                    <p class="team-quote" x-text="t('ahmed_quote')">L'innovation naît de la diversité des perspectives et de l'audace de repenser le possible.</p>
+                    <p class="team-description" x-text="t('ahmed_description')">Ahmed accompagne les jeunes entrepreneurs sociaux...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 - Elena Rodriguez (Image Center) -->
+        <div class="team-card">
+            <div class="flex flex-col items-center p-8 text-center">
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Elena Rodriguez" class="team-photo mx-auto">
+                </div>
+                <div>
+                    <h3 class="team-name" x-text="t('elena_name')">Elena Rodriguez</h3>
+                    <p class="team-role" x-text="t('elena_role')">Coordinatrice des partenariats internationaux</p>
+                    <p class="team-quote" x-text="t('elena_quote')">Les défis sont globaux, les solutions doivent l'être aussi. Ensemble, nous sommes plus forts.</p>
+                    <p class="team-description" x-text="t('elena_description')">Elena coordonne les échanges internationaux...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 4 - Lucas Martin (Image Left) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:mr-8">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Lucas Martin" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('lucas_name')">Lucas Martin</h3>
+                    <p class="team-role" x-text="t('lucas_role')">Expert en santé mentale des jeunes</p>
+                    <p class="team-quote" x-text="t('lucas_quote')">Prendre soin de sa santé mentale, c'est investir dans son avenir et celui de sa communauté.</p>
+                    <p class="team-description" x-text="t('lucas_description')">Psychologue clinicien spécialisé dans l'accompagnement...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 5 - Fatima Al-Zahra (Image Right) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row-reverse items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:ml-8">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Fatima Al-Zahra" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('fatima_name')">Fatima Al-Zahra</h3>
+                    <p class="team-role" x-text="t('fatima_role')">Responsable éducation et formation</p>
+                    <p class="team-quote" x-text="t('fatima_quote')">L'éducation est l'arme la plus puissante pour changer le monde et libérer les potentiels.</p>
+                    <p class="team-description" x-text="t('fatima_description')">Fatima conçoit et met en œuvre des programmes éducatifs...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 6 - Tomoko Sato (Image Center) -->
+        <div class="team-card">
+            <div class="flex flex-col items-center p-8 text-center">
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Tomoko Sato" class="team-photo mx-auto">
+                </div>
+                <div>
+                    <h3 class="team-name" x-text="t('tomoko_name')">Tomoko Sato</h3>
+                    <p class="team-role" x-text="t('tomoko_role')">Analyste en transformation numérique</p>
+                    <p class="team-quote" x-text="t('tomoko_quote')">La technologie doit servir l'humain, pas l'inverse. Créons un numérique inclusif et éthique.</p>
+                    <p class="team-description" x-text="t('tomoko_description')">Tomoko aide les jeunes à développer leurs compétences numériques...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 7 - Sofia Andersson (Image Left) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:mr-8">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                         alt="Sofia Andersson" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('sofia_name')">Sofia Andersson</h3>
+                    <p class="team-role" x-text="t('sofia_role')">Militante pour le climat et l'environnement</p>
+                    <p class="team-quote" x-text="t('sofia_quote')">Il n'y a pas de planète B. Agissons maintenant pour préserver l'avenir de nos enfants.</p>
+                    <p class="team-description" x-text="t('sofia_description')">Sofia mobilise les jeunes autour des enjeux climatiques...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 8 - David Thompson (Image Right) -->
+        <div class="team-card">
+            <div class="flex flex-col md:flex-row-reverse items-center p-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:ml-8">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="David Thompson" class="team-photo mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="team-name" x-text="t('david_name')">David Thompson</h3>
+                    <p class="team-role" x-text="t('david_role')">Coordinateur des programmes de mentorat</p>
+                    <p class="team-quote" x-text="t('david_quote')">Le mentorat, c'est transmettre l'expérience tout en apprenant de la fraîcheur des nouvelles générations.</p>
+                    <p class="team-description" x-text="t('david_description')">David développe et coordonne les programmes de mentorat...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-horizon-blue to-ocean-blue text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4" x-text="t('footer_credit')">Engagement des jeunes - Construisons l'avenir ensemble</h3>
+            <p x-text="t('footer_copyright')">2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
