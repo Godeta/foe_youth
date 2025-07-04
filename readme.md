@@ -5,7 +5,7 @@
 
 ## Overview
 
-This is the source code for the Engagement des Jeunes website, a platform dedicated to promoting youth involvement and engagement. The website is built using HTML, CSS, and JavaScript, with a focus on accessibility and user experience.
+This is the source code for the Engagement des Jeunes website, a platform to support our article and explain our view on the lack of youth involvment.
 
 ## Features
 
@@ -13,7 +13,7 @@ This is the source code for the Engagement des Jeunes website, a platform dedica
 * Responsive design for desktop and mobile devices
 * Interactive navigation and menu system
 * Team member profiles with images and descriptions
-* Customizable theme and color scheme using Tailwind CSS
+* Explanations on youth involvment and tree illustration with root causes and problems.
 
 ## Technologies Used
 
@@ -27,6 +27,7 @@ This is the source code for the Engagement des Jeunes website, a platform dedica
 
 * `aPropos.html`: About Us page
 * `index.html`: Home page
+* `article.html`: Our full article
 * `readme.md`: This file
 
 ## License
@@ -35,4 +36,4 @@ This project is licensed under the MIT License. See the [LICENSE file](LICENSE) 
 
 ## Contact
 
-For questions or feedback, please contact [Your Name](mailto:your@email.com).
+For questions or feedback, please contact [Arnaud](mailto:godeta61@gmail.com).

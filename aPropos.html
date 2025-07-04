@@ -9,9 +9,9 @@
     <!-- Alpine.js via CDN -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/google.css" rel="stylesheet">
+    <!-- Font Awesome pour icônes -->
+    <link rel="stylesheet" href="css/font-awesome.css">
     
     <script>
         tailwind.config = {
@@ -212,7 +212,7 @@
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('locale', () => ({
-                currentLanguage: 'fr',
+                currentLanguage: 'en',
                 
                 texts: {
                     'site_title': {
@@ -240,24 +240,24 @@
                         'en': 'Passionate about youth\'s future'
                     },
                     'about_section_title': {
-                        'fr': 'Rencontrez nos experts',
-                        'en': 'Meet our experts'
+                        'fr': 'Qui sommes nous ?',
+                        'en': 'Who are we ?'
                     },
-                    'marie_name': {
-                        'fr': 'Marie Dubois',
-                        'en': 'Marie Dubois'
+                    'Arnaud_name': {
+                        'fr': 'Arnaud GODET',
+                        'en': 'Arnaud GODET'
                     },
-                    'marie_role': {
-                        'fr': 'Directrice des programmes jeunesse',
-                        'en': 'Youth Programs Director'
+                    'Arnaud_role': {
+                        'fr': 'Ingénieur en robotique',
+                        'en': 'Robotic engineer'
                     },
-                    'marie_quote': {
+                    'Arnaud_quote': {
                         'fr': 'Chaque jeune a le potentiel de changer le monde, notre rôle est de lui donner les clés.',
-                        'en': 'Every young person has the potential to change the world, our role is to give them the keys.'
+                        'en': ' I don\'t have a text written yet, but this will be a beautiful quote.'
                     },
-                    'marie_description': {
-                        'fr': 'Avec plus de 15 ans d\'expérience dans l\'accompagnement des jeunes, Marie développe des programmes innovants qui permettent aux nouvelles générations de s\'épanouir et de s\'engager activement dans la société. Elle croit fermement en l\'importance de l\'éducation inclusive et de l\'autonomisation des jeunes.',
-                        'en': 'With over 15 years of experience in youth support, Marie develops innovative programs that enable new generations to flourish and actively engage in society. She firmly believes in the importance of inclusive education and youth empowerment.'
+                    'Arnaud_description': {
+                        'fr': 'Avec plus de 15 ans d\'expérience dans l\'accompagnement des jeunes, Arnaud développe des programmes innovants qui permettent aux nouvelles générations de s\'épanouir et de s\'engager activement dans la société. Elle croit fermement en l\'importance de l\'éducation inclusive et de l\'autonomisation des jeunes.',
+                        'en': 'blablabla blablabla Why am I here ?'
                     },
                     'ahmed_name': {
                         'fr': 'Ahmed Benali',
@@ -403,6 +403,7 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
                 <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="article.html" class="hover:text-hope-yellow transition-colors" >Article</a>
                 <a href="about.html" class="hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
                 
                 <!-- Language selector -->
@@ -446,18 +447,18 @@
     <main class="container mx-auto px-6 py-16">
         <h2 class="section-title" x-text="t('about_section_title')">Rencontrez nos experts</h2>
         
-        <!-- Team Member 1 - Marie Dubois (Image Left) -->
+        <!-- Team Member 1 - Arnaud GODET (Image Left) -->
         <div class="team-card">
             <div class="flex flex-col md:flex-row items-center p-8">
                 <div class="md:w-1/3 mb-6 md:mb-0 md:mr-8">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                         alt="Marie Dubois" class="team-photo mx-auto">
+                    <img src="img/arnaud.png" 
+                         alt="Arnaud GODET" class="team-photo mx-auto">
                 </div>
                 <div class="md:w-2/3">
-                    <h3 class="team-name" x-text="t('marie_name')">Marie Dubois</h3>
-                    <p class="team-role" x-text="t('marie_role')">Directrice des programmes jeunesse</p>
-                    <p class="team-quote" x-text="t('marie_quote')">Chaque jeune a le potentiel de changer le monde, notre rôle est de lui donner les clés.</p>
-                    <p class="team-description" x-text="t('marie_description')">Avec plus de 15 ans d'expérience dans l'accompagnement des jeunes...</p>
+                    <h3 class="team-name" x-text="t('Arnaud_name')">Arnaud GODET</h3>
+                    <p class="team-role" x-text="t('Arnaud_role')">Directrice des programmes jeunesse</p>
+                    <p class="team-quote" x-text="t('Arnaud_quote')">Chaque jeune a le potentiel de changer le monde, notre rôle est de lui donner les clés.</p>
+                    <p class="team-description" x-text="t('Arnaud_description')">Avec plus de 15 ans d'expérience dans l'accompagnement des jeunes...</p>
                 </div>
             </div>
         </div>

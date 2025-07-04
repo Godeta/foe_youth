@@ -33,7 +33,7 @@
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('locale', () => ({
-                currentLanguage: 'fr',
+                currentLanguage: 'en',
                 activeElement: null,
                 elementType: null,
                 
@@ -263,6 +263,7 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
                 <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="article.html" class="hover:text-hope-yellow transition-colors" >Article</a>
                 <a href="aPropos.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
                 
                 <!-- Sélecteur de langue -->
