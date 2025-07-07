@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="locale">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title x-text="currentLanguage === 'fr' ? 'Article - Engagement des jeunes' : 'Article - Youth Involvement'"></title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js via CDN -->
+    <script defer src="alpine.js"></script>
+    <!-- Google Fonts -->
+    <link href="css/google.css" rel="stylesheet">
+    <!-- Font Awesome pour icônes -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Notre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'sky-blue': '#0EA5E9',
+                'ocean-blue': '#0369A1',
+                'horizon-blue': '#075985',
+                'light-blue': '#BAE6FD',
+                'hope-yellow': '#FDE047',
+              }
+            }
+          }
+        }
+    </script>
+    <!-- Script pour la localisation -->
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('locale', () => ({
+                currentLanguage: 'en',
+                
+                // Tous les textes du site dans les deux langues
+                texts: {
+                    'site_title': {
+                        'fr': 'Engagement des jeunes',
+                        'en': 'Youth Involvement'
+                    },
+                    'nav_home': {
+                        'fr': 'Accueil',
+                        'en': 'Home'
+                    },
+                    'nav_illustrations': {
+                        'fr': 'Illustrations',
+                        'en': 'Illustrations'
+                    },
+                    'nav_article': {
+                        'fr': 'Article',
+                        'en': 'Article'
+                    },
+                    'nav_about': {
+                        'fr': 'À propos de nous',
+                        'en': 'About Us'
+                    },
+                    'article_title': {
+                        'fr': 'Notre Article',
+                        'en': 'Our Article'
+                    },
+                    'article_subtitle': {
+                        'fr': 'Analyse approfondie de l\'engagement des jeunes en politique',
+                        'en': 'In-depth analysis of youth engagement in politics'
+                    },
+                    'footer_credit': {
+                        'fr': 'Engagement des jeunes - Construisons l\'avenir ensemble',
+                        'en': 'Youth Involvement - Building the future together'
+                    },
+                    'footer_copyright': {
+                        'fr': '2025 - Tous droits réservés',
+                        'en': '2025 - All rights reserved'
+                    }
+                },
+                
+                // Méthode pour obtenir le texte dans la langue actuelle
+                t(key) {
+                    return this.texts[key][this.currentLanguage];
+                },
+                
+                // Méthode pour changer de langue
+                toggleLanguage() {
+                    this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
+                    document.documentElement.lang = this.currentLanguage;
+                }
+            }));
+        });
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header fixe -->
+    <header class="fixed w-full bg-horizon-blue bg-opacity-80 text-white z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-2xl" x-text="t('site_title')">Engagement des jeunes</a>
+            
+            <!-- Navigation desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="article.html" class="text-hope-yellow font-bold" x-text="t('nav_article')">Article</a>
+                <a href="aPropos.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                
+                <!-- Sélecteur de langue -->
+                <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? 'FR' : 'EN'"></span>
+                </button>
+            </nav>
+            
+            <!-- Bouton menu mobile -->
+            <button class="mobile-menu-button md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
+            <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
+                <a href="index.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
+                <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="article.html" class="py-3 text-hope-yellow font-bold" x-text="t('nav_article')">Article</a>
+                <a href="aPropos.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                
+                <!-- Sélecteur de langue mobile -->
+                <button @click="toggleLanguage()" class="my-3 px-4 py-2 rounded-full bg-white text-horizon-blue self-start hover:bg-hope-yellow transition-colors">
+                    <span x-text="currentLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 x-text="t('article_title')">Notre Article</h1>
+            <p x-text="t('article_subtitle')">Analyse approfondie de l'engagement des jeunes en politique</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-6 py-16">
+        <!-- Article content -->
+        <article class="max-w-4xl mx-auto">
+            <!-- Introduction -->
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Introduction</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe d'introduction qui présente le contexte général de notre recherche sur l'engagement des jeunes en politique. Ce paragraphe introduit les enjeux principaux et annonce la structure de l'article.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Ici deuxième paragraphe d'introduction qui précise notre approche méthodologique et nos objectifs de recherche.
+                </p>
+            </div>
+
+            <!-- Première section -->
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la première section</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe principal de la première section qui développe le premier aspect de notre analyse.
+                </p>
+                
+                <!-- Espace pour image -->
+                <div class="my-8 text-center">
+                    <div class="bg-gradient-to-r from-light-blue to-sky-blue rounded-lg p-12 mb-4">
+                        <i class="fas fa-image text-horizon-blue fa-4x mb-4"></i>
+                        <p class="text-horizon-blue font-semibold">Ici sera placée une image illustrative</p>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">Légende de l'image explicative</p>
+                </div>
+                
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Ici paragraphe de suite qui développe les idées après l'image et fait la transition vers la section suivante.
+                </p>
+            </div>
+
+            <!-- Deuxième section -->
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la deuxième section</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe qui introduit le deuxième aspect de notre analyse avec des données concrètes.
+                </p>
+                
+                <h3 class="text-2xl font-semibold text-ocean-blue mb-4">Sous-titre de section</h3>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe qui développe un sous-aspect spécifique avec des exemples et des références.
+                </p>
+                
+                <!-- Espace pour graphique/visualisation -->
+                <div class="my-8 text-center">
+                    <div class="bg-white border-2 border-light-blue rounded-lg p-12 mb-4">
+                        <i class="fas fa-chart-bar text-ocean-blue fa-4x mb-4"></i>
+                        <p class="text-ocean-blue font-semibold">Ici sera placé un graphique ou une visualisation</p>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">Description du graphique et de ses enseignements</p>
+                </div>
+                
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Ici paragraphe qui analyse les données présentées et en tire des conclusions.
+                </p>
+            </div>
+
+            <!-- Troisième section -->
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la troisième section</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe qui présente les solutions et recommandations issues de notre analyse.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6 my-8">
+                    <div class="bg-gradient-to-br from-hope-yellow to-sky-blue rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-horizon-blue mb-3">Point clé 1</h4>
+                        <p class="text-horizon-blue">Ici description du premier point important de nos recommandations.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-sky-blue to-ocean-blue rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-white mb-3">Point clé 2</h4>
+                        <p class="text-white">Ici description du deuxième point important de nos recommandations.</p>
+                    </div>
+                </div>
+                
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Ici paragraphe qui synthétise les recommandations et leur mise en œuvre pratique.
+                </p>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Conclusion</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ici paragraphe de conclusion qui résume les principaux enseignements de notre recherche et leur portée.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Ici paragraphe final qui ouvre sur les perspectives d'avenir et les actions à entreprendre.
+                </p>
+            </div>
+
+            <!-- Références/Sources -->
+            <div class="bg-gray-100 rounded-lg p-8">
+                <h2 class="text-2xl font-bold text-horizon-blue mb-4">Sources et références</h2>
+                <p class="text-gray-700 mb-4">Ici sera placée la liste des sources utilisées dans l'article :</p>
+                <ul class="text-gray-700 space-y-2">
+                    <li>• Référence 1 - Ici titre et détails de la source</li>
+                    <li>• Référence 2 - Ici titre et détails de la source</li>
+                    <li>• Référence 3 - Ici titre et détails de la source</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-horizon-blue to-ocean-blue text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4" x-text="t('footer_credit')">Engagement des jeunes - Construisons l'avenir ensemble</h3>
+            <p x-text="t('footer_copyright')">2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>

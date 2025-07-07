@@ -223,7 +223,7 @@
                         'fr': 'Accueil',
                         'en': 'Home'
                     },
-                    'nav_illustrations': {
+                    'aPropos.htm': {
                         'fr': 'Illustrations',
                         'en': 'Illustrations'
                     },
@@ -402,9 +402,9 @@
             <!-- Navigation desktop -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
-                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('aPropos.htm')">Illustrations</a>
                 <a href="article.html" class="hover:text-hope-yellow transition-colors" >Article</a>
-                <a href="about.html" class="hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
+                <a href="aPropos.html" class="hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
                 
                 <!-- Language selector -->
                 <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
@@ -424,8 +424,9 @@
         <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
             <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
                 <a href="index.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
-                <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
-                <a href="about.html" class="py-3 hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
+                <a href="aPropos.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('aPropos.htm')">Illustrations</a>
+                <a href="article.html" class="py-3 hover:text-hope-yellow transition-colors" >Article</a>
+                <a href="aPropos.html" class="py-3 hover:text-hope-yellow transition-colors font-semibold" x-text="t('nav_about')">À propos</a>
                 
                 <button @click="toggleLanguage()" class="my-3 px-4 py-2 rounded-full bg-white text-horizon-blue self-start hover:bg-hope-yellow transition-colors">
                     <span x-text="currentLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
