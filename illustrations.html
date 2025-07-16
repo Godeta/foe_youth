@@ -46,16 +46,32 @@
                         'en': 'Home'
                     },
                     'nav_illustrations': {
-                        'fr': 'Illustrations',
-                        'en': 'Illustrations'
+                        'fr': 'Plus d\'infos',
+                        'en': 'More infos'
                     },
                     'nav_about': {
                         'fr': 'À propos de nous',
                         'en': 'About Us'
                     },
+                    'politic_intro_text': {
+                        'fr': 'La démographie et les comportements électoraux en France montrent des écarts importants entre générations, tant du côté des électeurs que des élus. Ces données illustrent le poids plus faible des jeunes dans les décisions politiques et leur sentiment croissant de défiance envers le système démocratique.',
+                        'en': 'Demographics and voting behaviors in France show significant gaps between generations, both among voters and elected officials. These data illustrate the lower influence of young people in political decisions and their growing distrust of the democratic system.'
+                    },
+                    'demography_text': {
+                        'fr': '26,9 % de la population française a plus de 60 ans, tandis que les 18-29 ans représentent seulement 13,7 %. En 2022, 67 % des jeunes ont voté contre 77 % des plus de 65 ans.',
+                        'en': '26.9% of the French population is over 60, while 18-29 year olds represent only 13.7%. In 2022, 67% of young people voted compared to 77% of those over 65.'
+                    },
+                    'representative_age_text': {
+                        'fr': 'En 2020, moins de 4 % des maires avaient moins de 40 ans. La moyenne d\'âge des députés est de 50 ans.',
+                        'en': 'In 2020, less than 4% of mayors were under 40. The average age of members of parliament is 50.'
+                    },
+                    'perception_text': {
+                        'fr': '65 % des Français préfèrent se détourner de la politique et se concentrer sur leur vie personnelle.',
+                        'en': '65% of French people prefer to turn away from politics and focus on their personal lives.'
+                    },
                     'hero_title': {
-                        'fr': 'Illustrations',
-                        'en': 'Illustrations'
+                        'fr': 'Plus d\'infos',
+                        'en': 'More infos'
                     },
                     'hero_subtitle': {
                         'fr': 'Découvrez notre parcours et nos inspirations',
@@ -69,29 +85,13 @@
                         'fr': 'Notre équipe s\'est rencontrée lors de la semaine Future of Europe organisée à Strasbourg. Cet événement exceptionnel a rassemblé des jeunes de 6 pays d\'Europe pour réfléchir ensemble aux défis de demain. C\'est dans cette atmosphère d\'échange et de collaboration que nous avons découvert nos préoccupations communes concernant l\'engagement des jeunes en politique. Les discussions passionnantes et les ateliers interactifs ont nourri notre réflexion et ont donné naissance à ce projet collectif.',
                         'en': 'Our team met during the Future of Europe week organized in Strasbourg. This exceptional event brought together young people from 6 European countries to reflect together on tomorrow\'s challenges. It was in this atmosphere of exchange and collaboration that we discovered our common concerns about youth engagement in politics. The passionate discussions and interactive workshops nurtured our thinking and gave birth to this collective project.'
                     },
-                    'context_title': {
-                        'fr': 'Contexte et inspirations',
-                        'en': 'Context and Inspirations'
-                    },
-                    'context_content': {
-                        'fr': 'Ici espace disponible pour un paragraphe d\'informations avec une photo ci-dessous montrant les moments clés de notre réflexion collective. Ces images témoignent de l\'intensité des échanges et de la diversité des perspectives qui ont enrichi notre analyse.',
-                        'en': 'Here is available space for a paragraph of information with a photo below showing key moments of our collective reflection. These images testify to the intensity of exchanges and the diversity of perspectives that enriched our analysis.'
-                    },
-                    'methodology_title': {
-                        'fr': 'Notre méthodologie',
-                        'en': 'Our Methodology'
-                    },
-                    'methodology_content': {
-                        'fr': 'Ici espace disponible pour un paragraphe détaillant notre approche de recherche et d\'analyse. Une infographie ci-dessous illustrera les différentes étapes de notre processus de travail collaboratif.',
-                        'en': 'Here is available space for a paragraph detailing our research and analysis approach. An infographic below will illustrate the different stages of our collaborative work process.'
-                    },
                     'testimonials_title': {
                         'fr': 'Témoignages et rencontres',
                         'en': 'Testimonials and Encounters'
                     },
-                    'testimonials_content': {
-                        'fr': 'Ici espace disponible pour des témoignages de jeunes que nous avons rencontrés. Des portraits photographiques accompagneront leurs paroles pour donner un visage humain à notre recherche.',
-                        'en': 'Here is available space for testimonials from young people we have met. Photographic portraits will accompany their words to give a human face to our research.'
+                    'testimonials_description': {
+                    'fr': 'Ici, espace disponible pour des témoignages de jeunes que nous avons rencontrés. Les questions posées étaient :<br><br> • Connais-tu le groupe politique le plus populaire dans ta région ?<br> • Y a-t-il un groupe politique dans lequel tu sens que tes valeurs et idées sont bien représentées, ou votes-tu plutôt pour le \'moins pire\' ?<br> • Te sens-tu impliqué(e) dans les décisions politiques de ta communauté locale ?<br> • Quelles sont les trois principales raisons qui t\'empêchent d\'être plus impliqué(e) ? (manque de connaissances, de pouvoir, impression de ne rien pouvoir changer…)<br> • As-tu une suggestion pour améliorer les choses ?',
+                    'en': 'This is a space for testimonials from young people we have met. The questions we asked were:<br><br> • Do you know the most popular political group in your area?<br> • Is there a political group in which you feel your values and ideas are well represented, or do you vote for the \'less bad\' option?<br> • Do you feel involved in political decisions in your local community?<br> • What are the three main things that prevent you from getting more involved? (lack of knowledge, power, or the feeling that you can\'t change anything…)<br> • Do you have a suggestion to improve things?'
                     },
                     'statistics_title': {
                         'fr': 'Données et statistiques',
@@ -209,67 +209,11 @@
             </div>
         </section>
 
-        <!-- Section contexte et inspirations -->
-        <section class="content-section">
-            <h2 class="section-title" x-text="t('context_title')">Contexte et inspirations</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg leading-relaxed text-gray-700 mb-8" x-text="t('context_content')">
-                    Ici espace disponible pour un paragraphe d'informations avec une photo ci-dessous...
-                </p>
-                
-                <!-- Grille d'images -->
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-gradient-to-br from-ocean-blue to-horizon-blue rounded-lg p-6 text-center text-white">
-                        <i class="fas fa-users fa-3x mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Moments d'échange</h3>
-                        <p class="text-sm opacity-90">Ici sera placée une image des discussions de groupe</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-sky-blue to-ocean-blue rounded-lg p-6 text-center text-white">
-                        <i class="fas fa-lightbulb fa-3x mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Brainstorming</h3>
-                        <p class="text-sm opacity-90">Ici sera placée une image de nos sessions de réflexion</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section méthodologie -->
-        <section class="content-section">
-            <h2 class="section-title" x-text="t('methodology_title')">Notre méthodologie</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg leading-relaxed text-gray-700 mb-8" x-text="t('methodology_content')">
-                    Ici espace disponible pour un paragraphe détaillant notre approche de recherche...
-                </p>
-                
-                <!-- Infographie -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-                    <div class="flex justify-center items-center space-x-4 flex-wrap">
-                        <div class="bg-hope-yellow rounded-full p-4 m-2">
-                            <i class="fas fa-search text-horizon-blue fa-2x"></i>
-                        </div>
-                        <div class="text-horizon-blue text-2xl">→</div>
-                        <div class="bg-sky-blue rounded-full p-4 m-2">
-                            <i class="fas fa-comments text-white fa-2x"></i>
-                        </div>
-                        <div class="text-horizon-blue text-2xl">→</div>
-                        <div class="bg-ocean-blue rounded-full p-4 m-2">
-                            <i class="fas fa-chart-bar text-white fa-2x"></i>
-                        </div>
-                        <div class="text-horizon-blue text-2xl">→</div>
-                        <div class="bg-horizon-blue rounded-full p-4 m-2">
-                            <i class="fas fa-edit text-white fa-2x"></i>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-600 mt-4">Infographie du processus de recherche</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Section témoignages -->
         <section class="content-section">
             <h2 class="section-title" x-text="t('testimonials_title')">Témoignages et rencontres</h2>
             <div class="max-w-4xl mx-auto">
-                <p class="text-lg leading-relaxed text-gray-700 mb-8" x-text="t('testimonials_content')">
+                <p class="text-lg leading-relaxed text-gray-700 mb-8" x-html="t('testimonials_description')">
                     Ici espace disponible pour des témoignages de jeunes que nous avons rencontrés...
                 </p>
                 
@@ -279,8 +223,12 @@
                         <div class="w-20 h-20 bg-gradient-to-br from-hope-yellow to-sky-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                             <i class="fas fa-user text-white fa-2x"></i>
                         </div>
-                        <h3 class="font-bold text-horizon-blue mb-2">Portrait 1</h3>
-                        <p class="text-sm text-gray-600">Ici sera placé un témoignage de jeune</p>
+                        <h3 class="font-bold text-horizon-blue mb-2">Flora, Buzançais, France</h3>
+                        <p class="text-sm text-gray-600">1) Yes, It's the right.</p>
+                        <p class="text-sm text-gray-600">2) She used to have one but nowadays she votes for the less bad.</p>
+                        <p class="text-sm text-gray-600">3) She lacks information about what are the local policies. So It's a no.</p>
+                        <p class="text-sm text-gray-600">4) She fears It would take too much time to get involved. Also, the local initiatives are only destinated at old people or families in the area, If there was more young initiated or related initiatives she would be more interested</p>
+                        <p class="text-sm text-gray-600">5) An event that get people together and make them mix otherwise everyone stays in it’s group, for example speed dating for friends or table of people in front of each other that have some time to speak before changing their seat.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
                         <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -300,37 +248,80 @@
             </div>
         </section>
 
-        <!-- Section statistiques -->
-        <section class="content-section">
-            <h2 class="section-title" x-text="t('statistics_title')">Données et statistiques</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg leading-relaxed text-gray-700 mb-8" x-text="t('statistics_content')">
-                    Ici espace disponible pour présenter les données statistiques qui soutiennent notre analyse...
-                </p>
-                
-                <!-- Graphiques simulés -->
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="font-bold text-horizon-blue mb-4 text-center">Graphique 1</h3>
-                        <div class="h-48 bg-gradient-to-t from-light-blue to-sky-blue rounded flex items-end justify-center">
-                            <div class="text-horizon-blue text-4xl">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
+    <!-- Section statistiques -->
+    <section class="content-section">
+        <h2 class="section-title" x-text="t('statistics_title')">Données et statistiques</h2>
+        <div class="max-w-4xl mx-auto">
+            <p class="text-lg leading-relaxed text-gray-700 mb-8" x-text="t('politic_intro_text')">
+                La démographie et les comportements électoraux en France montrent des écarts importants entre générations, tant du côté des électeurs que des élus. Ces données illustrent le poids plus faible des jeunes dans les décisions politiques et leur sentiment croissant de défiance envers le système démocratique.
+            </p>
+
+            <!-- Graphiques simulés -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold mb-4 text-center">Démographie électorale</h3>
+                    <div
+                        class="h-48 rounded flex items-end justify-center bg-cover bg-center"
+                        style="background-image: url('https://plus.unsplash.com/premium_photo-1744278583074-668ed1cb33a5');"
+                    >
+                        <div class="text-white text-4xl bg-black bg-opacity-50 p-2 rounded-full">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <p class="text-sm text-gray-600 text-center mt-2">Évolution de l'engagement des jeunes</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="font-bold text-horizon-blue mb-4 text-center">Graphique 2</h3>
-                        <div class="h-48 bg-gradient-to-t from-light-blue to-ocean-blue rounded flex items-end justify-center">
-                            <div class="text-horizon-blue text-4xl">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
+                    <p class="text-sm text-gray-600 text-center mt-2" x-text="t('demography_text')">
+                        Texte démographie
+                    </p>
+                    <p class="text-xs text-center mt-1">
+                        <a href="https://www.insee.fr/fr/statistiques/4277619?sommaire=4318291#graphique-figure1" class="text-horizon-blue underline">
+                            Insee statistiques
+                        </a>
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold mb-4 text-center">Âge des élus</h3>
+                    <div
+                        class="h-48 rounded flex items-end justify-center bg-cover bg-center"
+                        style="background-image: url('https://plus.unsplash.com/premium_photo-1661964256419-4b4f1322852d');"
+                    >
+                        <div class="text-white text-4xl bg-black bg-opacity-50 p-2 rounded-full">
+                            <i class="fas fa-gavel"></i>
                         </div>
-                        <p class="text-sm text-gray-600 text-center mt-2">Répartition par tranche d'âge</p>
                     </div>
+                    <p class="text-sm text-gray-600 text-center mt-2" x-text="t('representative_age_text')">
+                        Texte âge des élus
+                    </p>
+                    <p class="text-xs text-center mt-1">
+                        <a href="https://www.amf.asso.fr/documents-la-carte-didentite-maires-2020/40307" class="text-horizon-blue underline">
+                            Association des maires de France
+                        </a>
+                    </p>
                 </div>
             </div>
-        </section>
+
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 class="font-bold mb-4 text-center">Perception de la politique</h3>
+                <div
+                    class="h-48 rounded flex items-end justify-center bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620');"
+                >
+                    <div class="text-white text-4xl bg-black bg-opacity-50 p-2 rounded-full">
+                        <i class="fas fa-thumbs-down"></i>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-2" x-text="t('perception_text')">
+                    Texte perception politique
+                </p>
+                <p class="text-xs text-center mt-1">
+                    <a href="https://www.sciencespo.fr/cevipof/fr/actualites/barometre-de-la-confiance-politique-du-cevipof-2025-le-grand-desarroi-democratique/" class="text-horizon-blue underline">
+                        Sciences Po
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
 
         <!-- Section solutions -->
         <section class="content-section">
@@ -358,6 +349,27 @@
                             <i class="fas fa-globe text-white fa-2x"></i>
                             <p class="text-sm text-white mt-2">Image/Illustration à placer ici</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Section aller plus loin -->
+        <section class="content-section">
+            <h2 class="section-title" >Further exploration</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg leading-relaxed text-gray-700 mb-8" >
+                    Here are some examples of authors or other sources on topics related to our article.
+                </p>
+                
+                <!-- Salome Saque -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow">
+                        <h3 class="font-bold text-horizon-blue mb-3">Salome Saqué</h3>
+                        <p class="text-gray-600 mb-4">French journalist who worked and wrote a book on the struggles of youth participation and why It matters to act about It.</p>
+                       <a class="underline" href="https://www.librairie-des-femmes.fr/livre/9782228935555-sois-jeune-et-tais-toi-reponse-a-ceux-qui-critiquent-la-jeunesse-salome-saque/"> Her book.</a>
                     </div>
                 </div>
             </div>
