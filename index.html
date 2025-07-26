@@ -47,7 +47,11 @@
                         'fr': 'Accueil',
                         'en': 'Home'
                     },
-                    'aPropos.htm': {
+                    'nav_illustrations': {
+                        'fr': 'Illustrations',
+                        'en': 'Illustrations'
+                    },
+                    'more': {
                         'fr': 'Plus d\'infos',
                         'en': 'More infos'
                     },
@@ -315,36 +319,37 @@
     <header class="fixed w-full bg-horizon-blue bg-opacity-80 text-white z-50" x-data="{ mobileMenuOpen: false }">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="font-bold text-2xl" x-text="t('site_title')">Engagement des jeunes</a>
-            
-            <!-- Navigation desktop -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
-                <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('aPropos.htm')">Illustrations</a>
-                <a href="article.html" class="hover:text-hope-yellow transition-colors" >Article</a>
-                <a href="aPropos.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                    <!-- Navigation desktop -->
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="text-hope-yellow font-bold" x-text="t('nav_home')">Accueil</a>
+                        <a href="article.html" class="hover:text-hope-yellow transition-colors">Article</a>
+                        <a href="more_info.html" class="hover:text-hope-yellow transition-colors" x-text="t('more')">More infos</a>
+                        <a href="aPropos.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                        <a href="illustrations.html" class="hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                        
+                        <!-- Sélecteur de langue -->
+                        <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
+                            <span x-text="currentLanguage === 'fr' ? 'FR' : 'EN'"></span>
+                        </button>
+                    </nav>
+                    
+                    <!-- Bouton menu mobile -->
+                    <button class="mobile-menu-button md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
                 
-                <!-- Sélecteur de langue -->
-                <button @click="toggleLanguage()" class="language-selector ml-4 bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-colors">
-                    <span x-text="currentLanguage === 'fr' ? 'FR' : 'EN'"></span>
-                </button>
-            </nav>
-            
-            <!-- Bouton menu mobile -->
-            <button class="mobile-menu-button md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Menu mobile -->
-        <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
-            <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
-                <a href="index.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_home')">Accueil</a>
-                <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('aPropos.htm')">Illustrations</a>
-                <a href="article.html" class="py-3 hover:text-hope-yellow transition-colors" >Article</a>
-                <a href="aPropos.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
-                
+                <!-- Menu mobile -->
+                <div class="mobile-menu md:hidden" x-show="mobileMenuOpen" x-transition>
+                    <nav class="flex flex-col px-6 py-4 bg-horizon-blue text-white">
+                        <a href="index.html" class="py-3 text-hope-yellow font-bold" x-text="t('nav_home')">Accueil</a>
+                        <a href="article.html" class="py-3 hover:text-hope-yellow transition-colors">Article</a>
+                        <a href="more_info.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('more')">More infos</a>
+                        <a href="aPropos.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_about')">À propos de nous</a>
+                        <a href="illustrations.html" class="py-3 hover:text-hope-yellow transition-colors" x-text="t('nav_illustrations')">Illustrations</a>
+                        
                 <!-- Sélecteur de langue mobile -->
                 <button @click="toggleLanguage()" class="my-3 px-4 py-2 rounded-full bg-white text-horizon-blue self-start hover:bg-hope-yellow transition-colors">
                     <span x-text="currentLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
