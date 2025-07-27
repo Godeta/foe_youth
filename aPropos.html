@@ -323,21 +323,22 @@
                         'fr': 'J\'ai moi-même ressenti le sentiment que la jeunesse n\'était pas prise au sérieux et j\'ai rejoint ce projet pour travailler sur cette problématique.',
                         'en': 'I faced personally the feeling of youth not being taken seriously and I joined this project to work on that.'
                     },
-                    'tomoko_name': {
-                        'fr': 'to be done',
-                        'en': 'to be done'
+                    'julie_name': {
+                        'fr': 'Julie BARNEAUD',
+                        'en': 'Julie BARNEAUD'
                     },
-                    'tomoko_role': {
-                        'fr': 'Analyste en transformation numérique',
-                        'en': 'Digital Transformation Analyst'
+                    'julie_role': {
+                        'fr': 'Juriste en droit international et numérique & Agricultrice',
+                        'en': 'International and Digital Law Jurist & Farmer'
                     },
-                    'tomoko_quote': {
-                        'fr': 'La technologie doit servir l\'humain, pas l\'inverse. Créons un numérique inclusif et éthique.',
-                        'en': 'Technology should serve humans, not the other way around. Let\'s create inclusive and ethical digital solutions.'
+                    'julie_quote': {
+                        'fr': 'Autonomiser les jeunes, c’est construire des systèmes où leurs voix ne sont pas seulement entendues, mais moteurs de changement.',
+                        'en': 'Empowering youth means building systems where their voices aren’t just heard, but drive change.'
                     },
-                    'tomoko_description': {
-                        'fr': 'Tomoko aide les jeunes à développer leurs compétences numériques tout en réfléchissant aux enjeux éthiques des nouvelles technologies. Ingénieure en informatique reconvertie dans l\'éducation, elle œuvre pour réduire la fracture numérique et promouvoir un usage responsable du digital.',
-                        'en': 'Tomoko helps young people develop their digital skills while reflecting on the ethical issues of new technologies. A computer engineer turned educator, she works to reduce the digital divide and promote responsible use of digital technology.'
+                    'julie_description': {
+                        'fr': 'Je suis juriste spécialisée en droit international et numérique, mais avant tout, je suis convaincue que les droits et les valeurs n\'ont de sens que s\'ils se traduisent par un changement réel et tangible. Le droit n\'est pas qu\'une théorie, c\'est un outil pour construire une société plus juste et inclusive.<br><br>Des associations étudiantes au bénévolat avec les Restos du Cœur, j\'ai appris que la solidarité se vit sur le terrain, à travers des liens concrets, l\'écoute et la responsabilité partagée. Je travaille également comme médiatrice solidaire étudiante, en aidant à créer des espaces où les jeunes se sentent vus, entendus et soutenus.<br><br>Ce qui me motive, c\'est la conviction que l\'engagement des jeunes doit être structurel, pas symbolique. Il ne s\'agit pas seulement de notre génération, mais de la jeunesse comme force vitale de toute société, poussant sans cesse au renouveau, à la justice et à l\'innovation.<br><br>À une époque où les jeunes sont souvent perçus comme désengagés, j\'ai vu l\'inverse : de l\'énergie, de la créativité et de l\'engagement. Il faut simplement des systèmes qui nous fassent confiance, nous incluent et nous donnent les moyens d\'agir. C\'est pour cela que j\'ai rejoint ce projet : pour transformer la participation des jeunes en une influence réelle, et œuvrer pour une Europe où chaque jeune se sente capable de façonner ce qui vient ensuite.',
+                        
+                        'en': 'I’m a jurist specialized in international and digital law, but above all, I’m someone who believes that rights and values only matter if they translate into real, tangible change. Law isn’t just theory, it’s a tool to build a fairer, more inclusive society.<br><br>From student associations to volunteering with Les Restos du Cœur, I’ve learned that solidarity happens on the ground, through real connections, listening, and shared responsibility. I also work as a student solidarity mediator, helping create spaces where young people feel seen, heard, and supported.<br><br>What drives me is the belief that youth engagement should be structural, not symbolic. It’s not just about our generation, it’s about youth as a vital force in every society, constantly pushing for renewal, justice, and innovation.<br><br>In a time when young people are often dismissed as disengaged, I’ve seen the opposite: energy, creativity, and commitment. We just need systems that trust us, include us, and give us the means to act. That’s why I joined this project. To help turn youth participation into real influence, and to push for a Europe where every young person feels empowered to shape what comes next.'
                     },
                     'sofia_name': {
                         'fr': 'to be done',
@@ -529,18 +530,25 @@
             </div>
         </div>
 
-        <!-- Team Member 6 - Tomoko Sato (Image Center) -->
+        <!-- Team Member 6 - julie Sato (Image Center) -->
         <div class="team-card">
             <div class="flex flex-col items-center p-8 text-center">
-                <div class="mb-6">
-                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Tomoko Sato" class="team-photo mx-auto">
-                </div>
-                <div>
-                    <h3 class="team-name" x-text="t('tomoko_name')">Tomoko Sato</h3>
-                    <p class="team-role" x-text="t('tomoko_role')">Analyste en transformation numérique</p>
-                    <p class="team-quote" x-text="t('tomoko_quote')">La technologie doit servir l'humain, pas l'inverse. Créons un numérique inclusif et éthique.</p>
-                    <p class="team-description" x-text="t('tomoko_description')">Tomoko aide les jeunes à développer leurs compétences numériques...</p>
+                <div class="mb-6 group relative w-fit mx-auto">
+                    <!-- Default image -->
+                    <img src="img/julie.jpg" 
+                         alt="Julie Sato" 
+                         class="team-photo transition-opacity duration-300 group-hover:opacity-0">
+                  
+                    <!-- Hover image -->
+                    <img src="img/julie-hover.png" 
+                         alt="Julie Sato hover" 
+                         class="team-photo absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  </div>                  
+                <div class="">
+                    <h3 class="team-name" x-text="t('julie_name')">julie Sato</h3>
+                    <p class="team-role" x-text="t('julie_role')">Analyste en transformation numérique</p>
+                    <p class="team-quote" x-text="t('julie_quote')">La technologie doit servir l'humain, pas l'inverse. Créons un numérique inclusif et éthique.</p>
+                    <p class="team-description text-left" x-html="t('julie_description')">julie aide les jeunes à développer leurs compétences numériques...</p>
                 </div>
             </div>
         </div>
@@ -556,7 +564,7 @@
                     <h3 class="team-name" x-text="t('sofia_name')">Sofia Andersson</h3>
                     <p class="team-role" x-text="t('sofia_role')">Militante pour le climat et l'environnement</p>
                     <p class="team-quote" x-text="t('sofia_quote')">Il n'y a pas de planète B. Agissons maintenant pour préserver l'avenir de nos enfants.</p>
-                    <p class="team-description" x-text="t('sofia_description')">Sofia mobilise les jeunes autour des enjeux climatiques...</p>
+                    <p class="team-description" x-html="t('sofia_description')">Sofia mobilise les jeunes autour des enjeux climatiques...</p>
                 </div>
             </div>
         </div>
@@ -572,7 +580,7 @@
                     <h3 class="team-name" x-text="t('david_name')">David Thompson</h3>
                     <p class="team-role" x-text="t('david_role')">Coordinateur des programmes de mentorat</p>
                     <p class="team-quote" x-text="t('david_quote')">Le mentorat, c'est transmettre l'expérience tout en apprenant de la fraîcheur des nouvelles générations.</p>
-                    <p class="team-description" x-text="t('david_description')">David développe et coordonne les programmes de mentorat...</p>
+                    <p class="team-description" x-html="t('david_description')">David développe et coordonne les programmes de mentorat...</p>
                 </div>
             </div>
         </div>
