@@ -118,9 +118,9 @@
                         'en': 'Youth diversity'
                     },
                     'more_ideas_content2': {
-                        'fr': 'Nous devons tenir compte de la diversité des expériences des jeunes à travers les contextes culturels, socio-économiques et politiques. Les obstacles rencontrés par un jeune immigré diffèrent considérablement de ceux d\'un jeune né dans le pays avec des réseaux établis. Ainsi, une approche véritablement inclusive nécessite de reconnaître ces différences tout en affirmant que chaque jeune, quel que soit son parcours ou son idéologie, a le droit de participer activement à la vie démocratique. Comme l\'affirme Arendt (2005), la politique repose sur la pluralité humaine — la coexistence d\'individus et de perspectives diverses. Adopter cette pluralité dans la participation des jeunes est non seulement essentiel pour la légitimité démocratique, mais aussi pour favoriser les expériences réflexives et transformatrices qui permettent le développement civique et le progrès de la société.',
+                        'fr': 'Nous devons tenir compte de la diversité des expériences des jeunes à travers les contextes culturels, socio-économiques et politiques. Les obstacles rencontrés par un jeune immigré diffèrent considérablement de ceux d\'un jeune né dans le pays avec des réseaux établis. Ainsi, une approche véritablement inclusive nécessite de reconnaître ces différences tout en affirmant que chaque jeune, quel que soit son parcours ou son idéologie, a le droit de participer activement à la vie démocratique. Comme l\'affirme Arendt (200<b>5)</b>, la politique repose sur la pluralité humaine — la coexistence d\'individus et de perspectives diverses. Adopter cette pluralité dans la participation des jeunes est non seulement essentiel pour la légitimité démocratique, mais aussi pour favoriser les expériences réflexives et transformatrices qui permettent le développement civique et le progrès de la société.',
                         
-                        'en': 'We must account for the diversity of youth experiences across cultural, socioeconomic, and political contexts. The barriers faced by a young immigrant differ markedly from those of a native-born youth with established networks. Thus, a genuinely inclusive approach requires acknowledging these differences while upholding the principle that every young person, regardless of background or ideology, has a right to participate actively in democratic life. As Arendt (2005) argues, politics is grounded in human plurality—the coexistence of diverse individuals and perspectives. Embracing this plurality within youth participation is not only essential for democratic legitimacy, but also for fostering the reflective, transformative experiences that enable civic development and societal progress.'
+                        'en': 'We must account for the diversity of youth experiences across cultural, socioeconomic, and political contexts. The barriers faced by a young immigrant differ markedly from those of a native-born youth with established networks. Thus, a genuinely inclusive approach requires acknowledging these differences while upholding the principle that every young person, regardless of background or ideology, has a right to participate actively in democratic life. As Arendt (200<b>5)</b> argues, politics is grounded in human plurality—the coexistence of diverse individuals and perspectives. Embracing this plurality within youth participation is not only essential for democratic legitimacy, but also for fostering the reflective, transformative experiences that enable civic development and societal progress.'
                     },
                     'more_ideas_title3': {
                         'fr': 'Montée des extrêmes',
@@ -232,6 +232,41 @@
             </div>
         </section>
 
+        <style>
+            /* Add this CSS for the toggle functionality */
+            .testimonial-content {
+                display: none;
+            }
+            
+            .testimonial-card.expanded .testimonial-content {
+                display: block;
+            }
+            
+            .testimonial-card.expanded .click-prompt {
+                display: none;
+            }
+            
+            .testimonial-card {
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+            
+            .testimonial-card:hover {
+                transform: translateY(-2px);
+            }
+            
+            .click-prompt {
+                color: #6b7280;
+                font-style: italic;
+                margin-top: 8px;
+            }
+        </style>
+        <script>
+            function toggleCard(card) {
+                card.classList.toggle('expanded');
+            }
+        </script>
+
         <!-- Section témoignages -->
         <section class="content-section">
             <h2 class="section-title" x-text="t('testimonials_title')">Témoignages et rencontres</h2>
@@ -240,55 +275,102 @@
                     Ici espace disponible pour des témoignages de jeunes que nous avons rencontrés...
                 </p>
                 
-                <!-- Cartes de témoignages -->
+                <!-- Cartes de témoignages / interviews-->
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
                         <div class="w-20 h-20 bg-gradient-to-br from-hope-yellow to-sky-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                             <i class="fas fa-user text-white fa-2x"></i>
                         </div>
                         <h3 class="font-bold text-horizon-blue mb-2">Flora, Buzançais, France</h3>
-                        <p class="text-sm text-gray-600">1) Yes, It's the right.</p>
-                        <p class="text-sm text-gray-600">2) She used to have one but nowadays she votes for the less bad.</p>
-                        <p class="text-sm text-gray-600">3) She lacks information about what are the local policies. So It's a no.</p>
-                        <p class="text-sm text-gray-600">4) She fears It would take too much time to get involved. Also, the local initiatives are only destinated at old people or families in the area, If there was more young initiated or related initiatives she would be more interested</p>
-                        <p class="text-sm text-gray-600">5) An event that get people together and make them mix otherwise everyone stays in it’s group, for example speed dating for friends or table of people in front of each other that have some time to speak before changing their seat.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> Yes, It's the right.</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> She used to have one but nowadays she votes for the less bad.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> She lacks information about what are the local policies. So It's a no.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> She fears It would take too much time to get involved. Also, the local initiatives are only destinated at old people or families in the area, If there was more young initiated or related initiatives she would be more interested</p>
+                            <p class="text-sm text-gray-600"><b>5)</b> An event that get people together and make them mix otherwise everyone stays in it’s group, for example speed dating for friends or table of people in front of each other that have some time to speak before changing their seat.</p>
+                    </div> </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
                         <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                             <i class="fas fa-user text-white fa-2x"></i>
                         </div>
                         <h3 class="font-bold text-horizon-blue mb-2">Emma, Paris, France</h3>
-                        <p class="text-sm text-gray-600">1) Yes, It's "Les républicains" on the right spectrum.</p>
-                        <p class="text-sm text-gray-600">2) She votes for the less bad.</p>
-                        <p class="text-sm text-gray-600">3) She lives in different areas for her work and studies, she knows what's going on where she works but doesn't feel like a local resident there so don't really feel involved.</p>
-                        <p class="text-sm text-gray-600">4) She doesn't know the local politics from her hometown and she doesn't feel like she belong to the place she lives for her studies. Also, she feels busy and doesn't really know what she could do or how to find the time for that.</p>
-                        <p class="text-sm text-gray-600">5) A local district meeting would be nice, she never heard of one happening in her area in Paris but would have loved to meet the other residents and get to know about the things that happens there. She feels like this would help to mix with other people as well as getting involved into the decisions.</p>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> Yes, It's "Les républicains" on the right spectrum.</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> She votes for the less bad.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> She lives in different areas for her work and studies, she knows what's going on where she works but doesn't feel like a local resident there so don't really feel involved.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> She doesn't know the local politics from her hometown and she doesn't feel like she belong to the place she lives for her studies. Also, she feels busy and doesn't really know what she could do or how to find the time for that.</p>
+                            <p class="text-sm text-gray-600"><b>5)</b> A local district meeting would be nice, she never heard of one happening in her area in Paris but would have loved to meet the other residents and get to know about the things that happens there. She feels like this would help to mix with other people as well as getting involved into the decisions.</p>
                     
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+  </div>                   </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
                         <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                             <i class="fas fa-user text-white fa-2x"></i>
                         </div>
                         <h3 class="font-bold text-horizon-blue mb-2">Sara, Setúbal, Portugal</h3>
-                        <p class="text-sm text-gray-600">1) Yes, it's PS (Socialist Party) a political party from center-left. I know it, in a general from throughout the news and electoral results.</p>
-                        <p class="text-sm text-gray-600">2) Usually I vote for the "less bad" option because I don´t feel fully represented by any other political party and none of them represet my values.</p>
-                        <p class="text-sm text-gray-600">3) Althought I participated in the election in Portugal, as an assistant and I collected signatures for the creation of a new party in Portugal, the thruth is that, in my local community I don't feel represented nor involved in political decisions.</p>
-                        <p class="text-sm text-gray-600">4) The feeling that my opinion doesn't matter; Lack of time to actually follow political matters and decisions; Lack of in politicials </p>
-                        <p class="text-sm text-gray-600">5)  I suggest more educational sessions regarding politics to youth people and more initiatives for youth participation, as open assembleis and participatory budgets - althought they exist, they are not well publicized.</p>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> Yes, it's PS (Socialist Party) a political party from center-left. I know it, in a general from throughout the news and electoral results.</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> Usually I vote for the "less bad" option because I don´t feel fully represented by any other political party and none of them represet my values.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> Althought I participated in the election in Portugal, as an assistant and I collected signatures for the creation of a new party in Portugal, the thruth is that, in my local community I don't feel represented nor involved in political decisions.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> The feeling that my opinion doesn't matter; Lack of time to actually follow political matters and decisions; Lack of in politicials </p>
+                            <p class="text-sm text-gray-600"><b>5)</b>  I suggest more educational sessions regarding politics to youth people and more initiatives for youth participation, as open assembleis and participatory budgets - althought they exist, they are not well publicized.</p>
                     
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+  </div>                   </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-user text-white fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-horizon-blue mb-2">Helena, Hamburg, Germany</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> I would guess that the most popular group in Hamburg would be SPD (social democrats, centre-left).</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> There is no political group I feel completely represented by. So, I would say yes, I usually vote for the "least bad" option.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> No, I don't feel involved in political decisions.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> I feel my lack of political knowledge but also the fact that I can't change anything prevent me from getting more involved. </p>
+                            <p class="text-sm text-gray-600"><b>5)</b> Sometimes, politicians use language that no one understands or that is deliberately vague or confusing. They should use simple language to address young people and be more inclusive. </p>
+                    </div> </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-user text-white fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-horizon-blue mb-2">Maria, Hamburg, Germany</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> Yes, the left party.</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> Yes, the left party represents my values well.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> Not really, because I never know what decisions need to be made so I don’t know how to involve myself.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> Lack of knowledge, lack of transparency in political activity, feeling like nothing’s going to change because the things that are important to me are mostly not what is on the agenda of the ruling political parties. Those mostly focus on economic growth, which is obvious in a capitalistic society, yet in my opinion we should be focusing more on humanitarian and ecological issues. </p>
+                            <p class="text-sm text-gray-600"><b>5)</b> Maybe just as a government working on making politics more transparent and teaching kids from a young age that they have a voice that is important. Teach kids from a young age that they have something to say and show them how to get involved. I feel like especially young people should always be encouraged to become politically active. Even teaching about volunteering or political involvement in schools could be a start.</p>
+                    </div> </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sky-blue to-ocean-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-user text-white fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-horizon-blue mb-2">Trystan, Creil, France</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> My city is politically anchored on the left (it’s the oldest city in France governed by socialists, for more than a century).</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> Yes, there is a political group that represents my values. But sometimes we may not share all the positions of the same party equally.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> I feel involved (working in a territorial collectivity and participating in the implementation of local policies). I think it’s simpler to be involved at the local level, because it’s more concrete, it’s a scale closer to the inhabitants with more opportunities to get involved. But it’s necessary that the territorial collectivities invest more in a true participatory democracy on the other hand, by associating the inhabitants more actively from the beginning of a project or a public policy, to define it together.</p>
+                            <p class="text-sm text-gray-600"><b>4)</b> For what prevents being more involved: The time it takes (when you’re in active life or a student) and a sense of illegitimacy in the face of people who have been present for a long time in citizen councils. </p>
+                            <p class="text-sm text-gray-600"><b>5)</b> Having an informal event bringing together young people from different backgrounds, with different life paths, who can exchange among themselves around activities, and build a point of view on the directions they would like to give to their territory.</p>
+                    </div> </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center testimonial-card" onclick="toggleCard(this)">
                         <div class="w-20 h-20 bg-gradient-to-br from-ocean-blue to-horizon-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                             <i class="fas fa-user text-white fa-2x"></i>
                         </div>
                         <h3 class="font-bold text-horizon-blue mb-2">Gonçalo, Lisbon, Portugal</h3>
-                        <p class="text-sm text-gray-600">1) Yes, it's the center-left party</p>
-                        <p class="text-sm text-gray-600">2) I don't identify with any of them completly. Because in some I feel represented by the social causes that they defend and then in other i like their economic point of view better but not at the same time. So, I normaly vote in the one who's more similar to my way of thinking.</p>
-                        <p class="text-sm text-gray-600">3) No </p>
-                        <p class="text-sm text-gray-600">4) Lack of time; Lack of knowledge on how the youth side of political parties work; The feeling that I can't change much </p>
-                        <p class="text-sm text-gray-600">5) We could have more initiatives in schools and universities to learn about politics, how is our country political spectrum, how do elections work and parties should get to know themselves.</p>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                            <p class="text-sm text-gray-600"><b>1)</b> Yes, it's the center-left party</p>
+                            <p class="text-sm text-gray-600"><b>2)</b> I don't identify with any of them completly. Because in some I feel represented by the social causes that they defend and then in other i like their economic point of view better but not at the same time. So, I normaly vote in the one who's more similar to my way of thinking.</p>
+                            <p class="text-sm text-gray-600"><b>3)</b> No </p>
+                            <p class="text-sm text-gray-600"><b>4)</b> Lack of time; Lack of knowledge on how the youth side of political parties work; The feeling that I can't change much </p>
+                            <p class="text-sm text-gray-600"><b>5)</b> We could have more initiatives in schools and universities to learn about politics, how is our country political spectrum, how do elections work and parties should get to know themselves.</p>
 
-                    </div>
+  </div>                   </div>
                 </div>
             </div>
         </section>
@@ -383,7 +465,7 @@
                                 Ici sera présentée une solution innovante avec illustrations
                             </p>
                 
-                            <img src="/img/diversity.jpg" alt="Illustration" class="w-full md:w-auto max-w-xs object-contain" />
+                            <img src="/img/illustrations/diversity.jpg" alt="Illustration" class="w-full md:w-auto max-w-xs object-contain" />
                         </div>
                     </div>
                     
@@ -391,7 +473,7 @@
                         <h3 class="font-bold text-horizon-blue mb-3" x-text="t('more_ideas_title3')">Étude de cas 1</h3>
                         <div class="flex flex-col md:flex-row items-start gap-4">
                             
-                            <img src="/img/revolution-still-life-design.jpg" alt="Illustration" class="w-full md:w-auto max-w-xs object-contain" />
+                            <img src="/img/illustrations/revolution-still-life-design.jpg" alt="Illustration" class="w-full md:w-auto max-w-xs object-contain" />
                             <p class="text-gray-600 mb-4 flex-1" x-html="t('more_ideas_content3')">
                                 Ici sera présentée une solution innovante avec illustrations
                             </p>
@@ -414,34 +496,73 @@
                 
                 <!-- Salome Saque -->
                 <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
                         <h3 class="font-bold text-horizon-blue mb-3">Salome Saqué</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
                         <p class="text-gray-600 mb-4">French journalist who worked and wrote a book on the struggles of youth participation and why It matters to act about It.</p>
                        <a class="underline" href="https://www.librairie-des-femmes.fr/livre/9782228935555-sois-jeune-et-tais-toi-reponse-a-ceux-qui-critiquent-la-jeunesse-salome-saque/"> Her book.</a>
+                       </div>
                     </div>
                 </div>
                 <!-- portuguese report -->
                 <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
                         <h3 class="font-bold text-horizon-blue mb-3">Study on youth participation in Portugal</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
                         <p class="text-gray-600 mb-4"> This Portuguese report says that while young people in Portugal are less engaged in traditional forms of political participation like voting or joining political parties, they are increasingly active in non-conventional and online forms of engagement, such as signing petitions, joining activist collectives, and participating in social media debates. The report highlights that youth often feel disconnected from formal political institutions but remain committed to democratic values, showing strong interest in issues like climate change, gender equality, and social justice. Education and income levels play a key role in political participation, and although youth are sometimes perceived as politically passive, the study reveals a dynamic and evolving landscape of civic engagement shaped by digital tools and new social movements.</p>
                        <a class="underline" href="https://cdn.gulbenkian.pt/wp-content/uploads/2022/03/Relatorio-Sintese-PT-final.pdf"> Here is the report in portuguese.</a>
+                       </div>
                     </div>
                 </div>
                 <!-- Study kids these days -->
                 <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
                         <h3 class="font-bold text-horizon-blue mb-3">Study upon stereotypes on youth</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
                         <p class="text-gray-600 mb-4"> This study was made in 2019 and looks at the stereotypes that we find repetedly, from antiquity Socrate saying that youth nowadays is not what It used to be, to our current generation saying the same thing about youth.</p>
                        <a class="underline" href="https://www.science.org/doi/10.1126/sciadv.aav5916"> The study "Kids these days: Why the youth of today seem lacking".</a>
+                       </div>
                     </div>
                 </div>
                 <!-- Amnesty internationnal -->
                 <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
                         <h3 class="font-bold text-horizon-blue mb-3">Amnesty international campaign</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
                         <p class="text-gray-600 mb-4"> The famous ONG Amnesty international made a campaign to fight against stereotypes on youth</p>
                        <a class="underline" href="https://www.amnesty.fr/actualites/bienvenue-aux-idealistes"> The campaign.</a>
+                       </div>
+                    </div>
+                </div>
+                <!-- German report young votes -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
+                        <h3 class="font-bold text-horizon-blue mb-3">Report on young votes in Germany</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                        <p class="text-gray-600 mb-4"> This German report describes the political attitudes and voting behaviour of young people in Germany using data from three major studies (FES study, Shell Youth Study 2024, SINUS Youth Study 2024). It puts an emphasis on the difference between East and Western Germany (lower democracy satisfaction in the east compared to the West), gender gaps in voting behaviour (rising support for right-wing populist AfD, especially among young men and in East Germany).
+                            Some of the findings: 
+                            Many feel powerless: 59% believe politics affects their lives, but only 45% think they can influence it. Youth political engagement is often short-term and issue-specific, while long-term participation remains low.
+                            Trust is higher in autonomous state institutions (e.g., Constitutional Court, police) than in political parties.
+                            44% agree that a “strong hand” is needed to restore order (sign of growing authoritarian leanings).
+                            This analysis highlights the need for a multidimensional approach to civic education and political communication that considers the diverse life realities, regional differences, and gender-specific characteristics of young people to foster sustainable democratic participation.</p>
+                       <a class="underline" href="https://www.amnesty.fr/actualites/bienvenue-aux-idealistes"> The report.</a>
+                       </div>
+                    </div>
+                </div>
+                <!-- German article -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-hope-yellow testimonial-card" onclick="toggleCard(this)">
+                        <h3 class="font-bold text-horizon-blue mb-3">German article on the voice of the youth in rural area with the example of an EU project</h3>
+                        <p class="click-prompt">Click on the card to show the content</p>
+                        <div class="testimonial-content">
+                        <p class="text-gray-600 mb-4"> German article from the university of Leipzig. It’s about the under-represented and under-researched voices of youth in rural areas and the democratic education effect but also the challenges of youth participation. They give an example of an EU-funded project ‘’The Best Is Yet to Come’’ in which youth from rural areas from different countries met to discuss about rural challenges and solutions across national lines. The project resulted in the 2nd European Rural Youth Parliament (2019 in Candás, Spain) with a declaration presented to European institutions, trying to ensure that rural youth voices were heard in EU policymaking</p>
+                       <a class="underline" href="https://home.uni-leipzig.de/jmcoe/blog/transnationale-dialogprojekte-und-jugendpartizipation"> The article.</a>
+                       </div>
                     </div>
                 </div>
             </div>
