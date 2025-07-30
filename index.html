@@ -14,6 +14,21 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <!-- Notre fichier CSS personnalisé -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .icon-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
     <script>
         tailwind.config = {
           theme: {
@@ -70,6 +85,10 @@
                     'context_title': {
                         'fr': 'Contexte',
                         'en': 'Context'
+                    },
+                    'context_content_small': {
+                        'fr': 'Nous sommes différents jeunes de toute l\'Europe, partageant notre point de vue sur les problèmes concernant l\'engagement des jeunes dans la société.',
+                        'en': 'We are different young people from all over Europe, sharing our view on the problems related to youth involvement in society.'
                     },
                     'context_content': {
                         'fr': "Le problème du manque d’implication efficace de la jeunesse dans la vie politique est un cercle vicieux. Il est complexe et a de nombreuses causes mais malgré l’évolution des jeunes et de nos sociétés, la boucle néfaste se perpétue. Aujourd'hui, nous sommes confrontés à des problèmes différents de ceux de nos prédécesseurs, mais la déconnexion sous-jacente entre les voix des jeunes et les processus de prise de décision persiste. Sur ce site, nous allons approfondir notre vision du manque d'implication des jeunes, de ce que représente ce concept de cercle en commençant d’abord avec l’arbre des causes et conséquences de ce problème. Vous trouverez également une page ‘Article’ dans laquelle vous retrouverez notre article complet sur le sujet ainsi qu’une page ‘À propos de nous’ qui nous présente et dans laquelle nous expliquons ce qui nous a poussé à écrire cet article.",
@@ -278,6 +297,161 @@
                         "fr": "Tradition → Cela a toujours été comme ça, le manque de participation a toujours existé, attendez votre tour...). Cela crée un cercle qui se répète",
                         "en": "Tradition → It's always been like this, lack of participation always existed, wait your turn...). It makes a circle that repeats itself"
                     },
+                    // Section Contexte
+                    "context_title": {
+                        "fr": "Contexte",
+                        "en": "Context"
+                    },
+                    "context_content": {
+                        "fr": "L'engagement des jeunes est essentiel pour construire un avenir durable et équitable. Pourtant, nous assistons à un problème systémique récurrent : l'échec à impliquer correctement la jeunesse dans notre société. Ce n'est pas seulement un problème d'aujourd'hui, mais un défi conceptuel qui traverse l'histoire.",
+                        "en": "Youth engagement is essential for building a sustainable and equitable future. Yet, we are witnessing a recurring systemic problem: the failure to properly involve youth in our society. This is not just a problem of today, but a conceptual challenge that spans throughout history."
+                    },
+
+                    // Section Définitions
+                    "definitions_title": {
+                        "fr": "Définitions",
+                        "en": "Definitions"
+                    },
+                    "youth_definition_title": {
+                        "fr": "Jeunesse",
+                        "en": "Youth"
+                    },
+                    "youth_definition_content": {
+                        "fr": "Les jeunes adultes de 18 à 29 ans. Le concept de jeunesse a évolué à travers l'histoire, façonné par les contextes sociaux, politiques et culturels. Ce n'est qu'aux 19e et 20e siècles que la jeunesse est devenue une étape de vie distincte.",
+                        "en": "Young adults aged 18 to 29. The concept of youth has evolved throughout history, shaped by social, political, and cultural contexts. It was only in the 19th and 20th centuries that youth became a distinct life stage."
+                    },
+                    "involvement_definition_title": {
+                        "fr": "Engagement",
+                        "en": "Involvement"
+                    },
+                    "involvement_definition_content": {
+                        "fr": "Participation active dans les décisions communautaires et la vie collective. Cela inclut non seulement les institutions démocratiques, mais aussi l'implication dans les réunions communautaires et les initiatives associatives locales.",
+                        "en": "Active participation in community decisions and collective life. This includes not only democratic institutions, but also involvement in community meetings and local association initiatives."
+                    },
+                    "politics_definition_title": {
+                        "fr": "Politique",
+                        "en": "Politics"
+                    },
+                    "politics_definition_content": {
+                        "fr": "Au-delà des institutions, la politique concerne la façon dont nous vivons ensemble en communauté. Il s'agit d'être entendu et d'avoir son mot à dire sur les décisions qui régissent notre vie collective.",
+                        "en": "Beyond institutions, politics concerns how we live together in community. It's about being heard and having a say in the decisions that govern our collective life."
+                    },
+
+                    // Section Problèmes
+                    "problems_title": {
+                        "fr": "Les Problèmes",
+                        "en": "The Problems"
+                    },
+                    "stereotype_title": {
+                        "fr": "Stéréotypes Persistants",
+                        "en": "Persistent Stereotypes"
+                    },
+                    "stereotype_content": {
+                        "fr": "Les générations plus âgées perçoivent souvent les jeunes comme paresseux, faibles ou désengagés. Cette perception existe depuis l'Antiquité et continue de resurgir avec chaque nouvelle génération.",
+                        "en": "Older generations often perceive young people as lazy, weak, or disengaged. This perception has existed since ancient times and continues to resurface with each new generation."
+                    },
+                    "unprofitable_title": {
+                        "fr": "Politiquement Non-rentable",
+                        "en": "Politically Unprofitable"
+                    },
+                    "unprofitable_content": {
+                        "fr": "Les politiciens se concentrent sur les électeurs plus âgés car ils représentent une plus grande partie de l'électorat. En France, il y a significativement plus d'électeurs de plus de 60 ans que de jeunes adultes de 18 à 29 ans.",
+                        "en": "Politicians focus on older voters because they represent a larger portion of the electorate. In France, there are significantly more voters over 60 than young adults aged 18 to 29."
+                    },
+                    "representation_title": {
+                        "fr": "Manque de Représentation",
+                        "en": "Lack of Representation"
+                    },
+                    "representation_content": {
+                        "fr": "Peu de jeunes parlementaires ou maires dans les rôles de prise de décision. Les jeunes sont clairement sous-représentés dans les positions de pouvoir politique.",
+                        "en": "Few young parliamentarians or mayors in decision-making roles. Young people are clearly underrepresented in political power positions."
+                    },
+                    "new_participation_title": {
+                        "fr": "Nouvelles Formes de Participation",
+                        "en": "New Forms of Participation"
+                    },
+                    "new_participation_content": {
+                        "fr": "Les jeunes participent différemment via les réseaux sociaux et les moyens numériques, qui ne s'alignent pas avec les méthodes traditionnelles d'engagement civique.",
+                        "en": "Young people participate differently through social media and digital means, which don't align with traditional methods of civic engagement."
+                    },
+
+                    // Section Causes Racines
+                    "root_causes_title": {
+                        "fr": "Causes Racines",
+                        "en": "Root Causes"
+                    },
+                    "elitism_title": {
+                        "fr": "Élitisme",
+                        "en": "Elitism"
+                    },
+                    "elitism_content": {
+                        "fr": "Le pouvoir est donné à ceux qui viennent d'écoles spécifiques, de milieux particuliers, de réseaux établis. Ces avantages se construisent avec l'âge, rendant l'accès difficile pour les jeunes.",
+                        "en": "Power is given to those who come from specific schools, particular backgrounds, established networks. These advantages build up with age, making access difficult for young people."
+                    },
+                    "literacy_title": {
+                        "fr": "Éducation Politique",
+                        "en": "Political Literacy"
+                    },
+                    "literacy_content": {
+                        "fr": "Manque d'information sur le fonctionnement des institutions, comment s'impliquer et ce qui se passe. Les médias se concentrent sur le buzz plutôt que sur l'information constructive.",
+                        "en": "Lack of information about how institutions work, how to get involved, and what's happening. Media focuses on buzz rather than constructive information."
+                    },
+                    "vicious_cycle_title": {
+                        "fr": "Cercle Vicieux",
+                        "en": "Vicious Cycle"
+                    },
+                    "vicious_cycle_content": {
+                        "fr": "Tradition d'attendre avant d'avoir l'opportunité de s'impliquer. Les générations précédentes reproduisent ce schéma et le manque de modèles rend difficile l'émergence de nouveaux leaders jeunes.",
+                        "en": "Tradition of waiting before having the opportunity to get involved. Previous generations reproduce this pattern and the lack of role models makes it difficult for new young leaders to emerge."
+                    },
+
+                    // Section Conséquences
+                    "consequences_title": {
+                        "fr": "Pourquoi C'est Important",
+                        "en": "Why It Matters"
+                    },
+                    "alienation_title": {
+                        "fr": "Aliénation Politique",
+                        "en": "Political Alienation"
+                    },
+                    "alienation_content": {
+                        "fr": "Les jeunes se détachent de la politique car leur opinion n'est jamais prise en compte.",
+                        "en": "Young people drift away from politics as their opinion is never properly considered."
+                    },
+                    "narrow_view_title": {
+                        "fr": "Vision Conservatrice",
+                        "en": "Conservative View"
+                    },
+                    "narrow_view_content": {
+                        "fr": "Focus sur les besoins immédiats des générations plus âgées plutôt que sur les défis à long terme.",
+                        "en": "Focus on immediate needs of older generations rather than long-term challenges."
+                    },
+                    "housing_title": {
+                        "fr": "Crise du Logement",
+                        "en": "Housing Crisis"
+                    },
+                    "housing_content": {
+                        "fr": "Impact disproportionné sur les jeunes qui ne peuvent plus vivre où ils travaillent.",
+                        "en": "Disproportionate impact on young people who can no longer live where they work."
+                    },
+                    "polarization_title": {
+                        "fr": "Polarisation",
+                        "en": "Polarization"
+                    },
+                    "polarization_content": {
+                        "fr": "Radicalisation via les réseaux sociaux en l'absence de dialogue institutionnel proper.",
+                        "en": "Radicalization through social media in the absence of proper institutional dialogue."
+                    },
+                    // Section Conclusion
+                    "conclusion_title": {
+                        "fr": "Briser le Cycle",
+                        "en": "Breaking the Cycle"
+                    },
+                    "conclusion_content": {
+                        "fr": "Nous assistons à un cercle vicieux : les jeunes sont exclus, ce qui décourage leur implication, ce qui justifie à son tour leur exclusion. Cette dynamique n'est ni normale ni durable.",
+                        "en": "We're witnessing a vicious cycle : young people are excluded, which discourages their involvement, which justifies in turn their exclusion. This dynamic is neither normal nor sustainable." 
+                    }
+                    ,
                     //footer
                     'footer_credit': {
                         'fr': 'Engagement des jeunes - Construisons l\'avenir ensemble',
@@ -373,9 +547,9 @@
     <main class="container mx-auto px-4 py-16">
         <!-- Section contexte -->
         <section class="content-section">
-            <h2 class="section-title" x-text="t('context_title')">Contexte</h2>
+            <h2 class="section-title" >Hi. Bonjour :) Oi ! Hola ^^ HALLO</h2>
             <div class="max-w-4xl mx-auto text-gray-700">
-                <p class="text-lg leading-relaxed" x-text="t('context_content')">L'engagement des jeunes est essentiel pour construire un avenir durable et équitable...</p>
+                <p class="text-lg leading-relaxed" x-text="t('context_content_small')">L'engagement des jeunes est essentiel pour construire un avenir durable et équitable...</p>
             </div>
         </section>
 
@@ -673,6 +847,200 @@
                 </div>
             </div>
         </section>
+
+        <!-- Section Contexte -->
+    <section class="content-section py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 text-gray-800" x-text="t('context_title')">Contexte</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg">
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6" x-text="t('context_content')">L'engagement des jeunes est essentiel pour construire un avenir durable et équitable...</p>
+                    <div class="flex items-center justify-center mt-6">
+                        <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Définitions -->
+    <section class="content-section py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 text-gray-800" x-text="t('definitions_title')">Définitions</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-4" x-text="t('youth_definition_title')">Jeunesse</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" x-text="t('youth_definition_content')">Les jeunes adultes de 18 à 29 ans...</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-4" x-text="t('involvement_definition_title')">Engagement</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" x-text="t('involvement_definition_content')">Participation active dans les décisions communautaires...</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-4" x-text="t('politics_definition_title')">Politique</h3>
+                    <p class="text-gray-600 text-center leading-relaxed" x-text="t('politics_definition_content')">Au-delà des institutions, la vie en communauté...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Problèmes -->
+    <section class="content-section py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 text-gray-800" x-text="t('problems_title')">Les Problèmes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-semibold text-red-800 mb-2" x-text="t('stereotype_title')">Stéréotypes Persistants</h3>
+                        <p class="text-red-700" x-text="t('stereotype_content')">Les générations plus âgées perçoivent souvent les jeunes comme paresseux...</p>
+                    </div>
+                    
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-2" x-text="t('unprofitable_title')">Politiquement Non-rentable</h3>
+                        <p class="text-orange-700" x-text="t('unprofitable_content')">Les politiciens se concentrent sur les électeurs plus âgés...</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-semibold text-yellow-800 mb-2" x-text="t('representation_title')">Manque de Représentation</h3>
+                        <p class="text-yellow-700" x-text="t('representation_content')">Peu de jeunes parlementaires ou maires...</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-2" x-text="t('new_participation_title')">Nouvelles Formes de Participation</h3>
+                        <p class="text-blue-700" x-text="t('new_participation_content')">Les jeunes participent différemment via les réseaux sociaux...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Causes Racines -->
+    <section class="content-section py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 text-gray-800" x-text="t('root_causes_title')">Causes Racines</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-red-600 font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" x-text="t('elitism_title')">Élitisme</h3>
+                    <p class="text-gray-600 leading-relaxed" x-text="t('elitism_content')">Le pouvoir est donné à ceux qui viennent d'écoles spécifiques...</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-orange-600 font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" x-text="t('literacy_title')">Éducation Politique</h3>
+                    <p class="text-gray-600 leading-relaxed" x-text="t('literacy_content')">Manque d'information sur le fonctionnement des institutions...</p>
+                </div>
+                
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-yellow-600 font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" x-text="t('vicious_cycle_title')">Cercle Vicieux</h3>
+                    <p class="text-gray-600 leading-relaxed" x-text="t('vicious_cycle_content')">Tradition d'attendre avant d'avoir l'opportunité de s'impliquer...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Conséquences -->
+    <section class="content-section py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 text-gray-800" x-text="t('consequences_title')">Pourquoi C'est Important</h2>
+            <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-10 shadow-xl">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex-shrink-0 flex items-center justify-center mt-1">
+                                <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-2" x-text="t('alienation_title')">Aliénation Politique</h3>
+                                <p class="text-gray-600 text-sm" x-text="t('alienation_content')">Les jeunes se détachent de la politique...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex-shrink-0 flex items-center justify-center mt-1">
+                                <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-2" x-text="t('narrow_view_title')">Vision Conservatrice</h3>
+                                <p class="text-gray-600 text-sm" x-text="t('narrow_view_content')">Focus sur les besoins immédiats des générations plus âgées...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center mt-1">
+                                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-2" x-text="t('housing_title')">Crise du Logement</h3>
+                                <p class="text-gray-600 text-sm" x-text="t('housing_content')">Impact disproportionné sur les jeunes générations...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex-shrink-0 flex items-center justify-center mt-1">
+                                <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-2" x-text="t('polarization_title')">Polarisation</h3>
+                                <p class="text-gray-600 text-sm" x-text="t('polarization_content')">Radicalisation via les réseaux sociaux...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Conclusion -->
+    <section class="content-section py-16 gradient-bg">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="section-title text-4xl font-bold mb-8 text-white" x-text="t('conclusion_title')">Briser le Cycle</h2>
+            <p class="text-xl text-white/90 leading-relaxed mb-8" x-text="t('conclusion_content')">Nous assistons à un cercle vicieux qui doit être brisé...</p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <p class="text-lg text-white/95 mb-6" x-text="t('call_to_action')">Il est temps d'agir pour une société plus inclusive...</p>
+                <div class="flex justify-center">
+                    <div class="w-24 h-1 bg-white/50 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <!-- Footer -->
