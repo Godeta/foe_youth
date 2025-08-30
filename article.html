@@ -153,16 +153,63 @@
     <main class="container mx-auto px-6 py-16">
         <!-- Article content -->
         <article class="max-w-4xl mx-auto">
-            <!-- Introduction -->
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Introduction</h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe d'introduction qui présente le contexte général de notre recherche sur l'engagement des jeunes en politique. Ce paragraphe introduit les enjeux principaux et annonce la structure de l'article.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Ici deuxième paragraphe d'introduction qui précise notre approche méthodologique et nos objectifs de recherche.
-                </p>
-            </div>
+            <!-- Introduction / Youth Participation -->
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+    <h2 class="text-3xl font-bold text-horizon-blue mb-2"
+        x-text="currentLanguage === 'fr' ? 'Participation des jeunes' : 'Youth Participation'">
+        Youth Participation
+    </h2>
+
+    <h3 class="text-xl italic text-ocean-blue mb-4"
+        x-text="currentLanguage === 'fr' ? 'Briser le cycle' : 'Breaking the cycle'">
+        Breaking the cycle
+    </h3>
+
+    <p class="font-semibold text-gray-800 mb-4"
+       x-text="currentLanguage === 'fr'
+        ? 'Les jeunes ont-ils une place à la table ?'
+        : 'Is there a seat for youth at the table?'">
+        Is there a seat for youth at the table?
+    </p>
+
+    <p class="text-gray-600 text-sm mb-6"
+       x-text="currentLanguage === 'fr'
+        ? 'Écrit par 9 jeunes citoyens européens : Bea CAVACO, Arnaud GODET, Victoria SANCHIS, Julie BARNEAU, Victor GONZALEZ BIRO, Aroa RAMIREZ SAEZ, Mirella DE ASSIS, Sonja Nass, Julia FUDICKAR'
+        : 'Written by 9 young European citizens: Bea CAVACO, Arnaud GODET, Victoria SANCHIS, Julie BARNEAU, Victor GONZALEZ BIRO, Aroa RAMIREZ SAEZ, Mirella DE ASSIS, Sonja Nass, Julia FUDICKAR'">
+        Written by...
+    </p>
+
+    <!-- Unsplash image placeholder -->
+    <div class="my-6 text-center">
+        <img src="https://source.unsplash.com/1200x500/?youth,community" alt="Youth participation"
+             class="rounded-lg shadow-md mx-auto">
+    </div>
+
+    <h2 class="text-2xl font-bold text-horizon-blue mb-4"
+        x-text="currentLanguage === 'fr' ? 'La nature perpétuelle de la jeunesse' : 'The perpetual nature of youth'">
+        The perpetual nature of youth
+    </h2>
+
+    <p class="text-lg leading-relaxed text-gray-700"
+       x-text="currentLanguage === 'fr'
+        ? `La vie est un cercle.
+Le cycle constant et immuable qu’est la vie relie irrévocablement la naissance et la mort, et tout ce qui se trouve entre les deux. Bien qu’il soit rassurant de penser que nos existences sont indépendantes et autonomes, dans lesquelles toutes les actions et conséquences résonnent simplement dans les limites de nos vies finies, la roue qui tourne et tourne et nous emporte tous fera en sorte qu’aucune forme de vie ne soit autonome. Les vivants, les morts et les pas encore nés participent également à ce processus ; ils le partagent à tout moment.
+Chaque naissance se produit d’une manière particulière, inimitable, tout comme chaque mort, pourtant les deux phénomènes sont perpétuels. Il en va de même de la vie qui se déroule entre elles, et de notre jeunesse chérie. Tout comme l’enfance, l’âge adulte et la vieillesse, la jeunesse est une constante de la vie et de la société. Nos vies au 21e siècle seraient méconnaissables pour un jeune du passé lointain. Pourtant, leur espoir était le même que le nôtre. Leur ambition aussi, leur énergie ; il en va de même pour leurs sentiments d’injustice, leur impression d’être ignorés et de ne pas avoir de contrôle sur leur vie.
+Malgré les défis uniques de chaque époque, et la façon dont chaque génération se perçoit différemment, une chose reste vraie : les jeunes sont systématiquement empêchés de participer à la construction de la société par les moyens du pouvoir.
+Il est impératif de viser des réformes durables, systémiques et collaboratives qui permettent d’adapter les besoins des différents groupes d’âge efficacement, sur le long terme et pas seulement dans notre vie. Nous devons construire des mécanismes pérennes qui nous permettent de coexister et de prospérer, en veillant à ce que chaque génération ait une place à la table.
+Du point de vue de nous, jeunes d’aujourd’hui, les structures dans lesquelles nous vivons sont construites et contrôlées par les générations plus âgées. Nous vivons en même temps dans un monde fait pour les personnes âgées et nous sommes systématiquement exclus des décisions qui définiront le monde que nous hériterons demain. Ce n’est pas un problème qui nous est propre. La mise à l’écart constante des jeunes dans la prise de décision est une question profondément enracinée, transmise de génération en génération.
+C’est bel et bien un cycle : un jour, ce sera nous qui serons déconnectés, prenant des décisions sur des enjeux de jeunesse que nous ne comprendrons pas entièrement. Comment la jeunesse de demain fera-t-elle entendre sa voix quand cela arrivera ?`
+        : `Life is a circle.
+The ever constant, unchanging cycle that is life irreparably connects birth and death, and everything in between. While it's comforting to think of our existences as independent and self-contained, wherein all actions and all consequences reverberate simply within the confines of our finite lives, the wheel that turns and turns and carries us all with it will make sure no form of life is self-standing. The living, the dead, and the not yet born participate evenly in this process; they share it equally at all times.
+Each birth occurs in a special, inimitable way, and so does each death, yet both phenomenons are perennial. So is the life that happens between them, and so is our cherished youth. Much like infancy, adulthood and old age, youth is a constant of both life and society. Our 21st century lives might be unrecognisable to a young person in the distant past. Their hope, however, was the same as ours. Their ambition too, their energy; same goes for their feelings of injustice, how they felt ignored and not in control of their lives.
+Despite the unique challenges each era brings about, and how different each generation perceives itself to be, this much remains true: the youth is systematically prevented from getting involved in shaping society through means of power.
+It is imperative to aim for enduring, systemic and collaborative reforms that ensure we can adapt the necessities of the different age groups effectively, in the long run and not just within our lifetime. We must build enduring mechanisms that allow us to coexist and thrive, ensuring that every generation has a seat at the table.
+From the viewpoint of us young people of today, the structures we live in are built and controlled by older generations. We are at the same time living in a world made for older people and systematically excluded from making the decisions that will define the world we’ll inherit in the future. This is not an issue particular to us. The constant sidelining of young people in decision making is a deep-rooted issue which is passed down from generation to generation.
+It is very much a cycle: eventually, we will be the ones out of touch, making decisions about young issues we can't fully grasp. How will the youth of tomorrow raise their voice when that happens?`">
+        <!-- Long paragraph in FR/EN -->
+    </p>
+</div>
+
 
             <!-- Première section -->
             <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
