@@ -179,129 +179,970 @@
         Written by...
     </p>
 
-    <!-- Unsplash image placeholder -->
+    <!-- Unsplash image -->
     <div class="my-6 text-center">
-        <img src="https://source.unsplash.com/1200x500/?youth,community" alt="Youth participation"
+        <img src="img/article/1.png" alt="Youth participation"
              class="rounded-lg shadow-md mx-auto">
     </div>
 
-    <h2 class="text-2xl font-bold text-horizon-blue mb-4"
+    <h2 class="text-2xl font-bold text-horizon-blue mb-6"
         x-text="currentLanguage === 'fr' ? 'La nature perpétuelle de la jeunesse' : 'The perpetual nature of youth'">
         The perpetual nature of youth
     </h2>
 
-    <p class="text-lg leading-relaxed text-gray-700"
-       x-text="currentLanguage === 'fr'
-        ? `La vie est un cercle.
-Le cycle constant et immuable qu’est la vie relie irrévocablement la naissance et la mort, et tout ce qui se trouve entre les deux. Bien qu’il soit rassurant de penser que nos existences sont indépendantes et autonomes, dans lesquelles toutes les actions et conséquences résonnent simplement dans les limites de nos vies finies, la roue qui tourne et tourne et nous emporte tous fera en sorte qu’aucune forme de vie ne soit autonome. Les vivants, les morts et les pas encore nés participent également à ce processus ; ils le partagent à tout moment.
-Chaque naissance se produit d’une manière particulière, inimitable, tout comme chaque mort, pourtant les deux phénomènes sont perpétuels. Il en va de même de la vie qui se déroule entre elles, et de notre jeunesse chérie. Tout comme l’enfance, l’âge adulte et la vieillesse, la jeunesse est une constante de la vie et de la société. Nos vies au 21e siècle seraient méconnaissables pour un jeune du passé lointain. Pourtant, leur espoir était le même que le nôtre. Leur ambition aussi, leur énergie ; il en va de même pour leurs sentiments d’injustice, leur impression d’être ignorés et de ne pas avoir de contrôle sur leur vie.
-Malgré les défis uniques de chaque époque, et la façon dont chaque génération se perçoit différemment, une chose reste vraie : les jeunes sont systématiquement empêchés de participer à la construction de la société par les moyens du pouvoir.
-Il est impératif de viser des réformes durables, systémiques et collaboratives qui permettent d’adapter les besoins des différents groupes d’âge efficacement, sur le long terme et pas seulement dans notre vie. Nous devons construire des mécanismes pérennes qui nous permettent de coexister et de prospérer, en veillant à ce que chaque génération ait une place à la table.
-Du point de vue de nous, jeunes d’aujourd’hui, les structures dans lesquelles nous vivons sont construites et contrôlées par les générations plus âgées. Nous vivons en même temps dans un monde fait pour les personnes âgées et nous sommes systématiquement exclus des décisions qui définiront le monde que nous hériterons demain. Ce n’est pas un problème qui nous est propre. La mise à l’écart constante des jeunes dans la prise de décision est une question profondément enracinée, transmise de génération en génération.
-C’est bel et bien un cycle : un jour, ce sera nous qui serons déconnectés, prenant des décisions sur des enjeux de jeunesse que nous ne comprendrons pas entièrement. Comment la jeunesse de demain fera-t-elle entendre sa voix quand cela arrivera ?`
-        : `Life is a circle.
-The ever constant, unchanging cycle that is life irreparably connects birth and death, and everything in between. While it's comforting to think of our existences as independent and self-contained, wherein all actions and all consequences reverberate simply within the confines of our finite lives, the wheel that turns and turns and carries us all with it will make sure no form of life is self-standing. The living, the dead, and the not yet born participate evenly in this process; they share it equally at all times.
-Each birth occurs in a special, inimitable way, and so does each death, yet both phenomenons are perennial. So is the life that happens between them, and so is our cherished youth. Much like infancy, adulthood and old age, youth is a constant of both life and society. Our 21st century lives might be unrecognisable to a young person in the distant past. Their hope, however, was the same as ours. Their ambition too, their energy; same goes for their feelings of injustice, how they felt ignored and not in control of their lives.
-Despite the unique challenges each era brings about, and how different each generation perceives itself to be, this much remains true: the youth is systematically prevented from getting involved in shaping society through means of power.
-It is imperative to aim for enduring, systemic and collaborative reforms that ensure we can adapt the necessities of the different age groups effectively, in the long run and not just within our lifetime. We must build enduring mechanisms that allow us to coexist and thrive, ensuring that every generation has a seat at the table.
-From the viewpoint of us young people of today, the structures we live in are built and controlled by older generations. We are at the same time living in a world made for older people and systematically excluded from making the decisions that will define the world we’ll inherit in the future. This is not an issue particular to us. The constant sidelining of young people in decision making is a deep-rooted issue which is passed down from generation to generation.
-It is very much a cycle: eventually, we will be the ones out of touch, making decisions about young issues we can't fully grasp. How will the youth of tomorrow raise their voice when that happens?`">
-        <!-- Long paragraph in FR/EN -->
-    </p>
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'" class="text-lg leading-relaxed text-gray-700 space-y-4">
+        <p>Life is a circle.<br/></p>
+
+        <p>
+            The ever constant, unchanging cycle that is life irreparably connects birth and death, and everything in between.
+            While it's comforting to think of our existences as independent and self-contained, wherein all actions and all consequences
+            reverberate simply within the confines of our finite lives, the wheel that turns and turns and carries us all with it
+            will make sure no form of life is self-standing. The living, the dead, and the not yet born participate evenly in this process;
+            they share it equally at all times.
+        </p>
+
+        <p>
+            Each birth occurs in a special, inimitable way, and so does each death, yet both phenomenons are perennial.
+            So is the life that happens between them, and so is our cherished youth.
+            Much like infancy, adulthood and old age, youth is a constant of both life and society.
+            Our 21st century lives might be unrecognisable to a young person in the distant past. Their hope, however, was the same as ours.
+            Their ambition too, their energy; same goes for their feelings of injustice, how they felt ignored and not in control of their lives.
+        </p>
+
+        <p>
+            Despite the unique challenges each era brings about, and how different each generation perceives itself to be,
+            this much remains true: the youth is systematically prevented from getting involved in shaping society through means of power.
+        </p>
+
+        <p>
+            It is imperative to aim for enduring, systemic and collaborative reforms that ensure we can adapt the necessities of the different
+            age groups effectively, in the long run and not just within our lifetime. We must build enduring mechanisms that allow us to
+            coexist and thrive, ensuring that every generation has a seat at the table.
+        </p>
+
+        <p>
+            From the viewpoint of us young people of today, the structures we live in are built and controlled by older generations.
+            We are at the same time living in a world made for older people and systematically excluded from making the decisions that
+            will define the world we’ll inherit in the future. This is not an issue particular to us.
+            The constant sidelining of young people in decision making is a deep-rooted issue which is passed down from generation to generation.
+        </p>
+
+        <p>
+            It is very much a cycle: eventually, we will be the ones out of touch, making decisions about young issues we can't fully grasp.
+            <strong>How will the youth of tomorrow raise their voice when that happens?</strong>
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'" class="text-lg leading-relaxed text-gray-700 space-y-4">
+        <p>La vie est un cercle.<br/></p>
+
+        <p>
+            Le cycle constant et immuable qu’est la vie relie irrévocablement la naissance et la mort, et tout ce qui se trouve entre les deux.
+            Bien qu’il soit rassurant de penser que nos existences sont indépendantes et autonomes, dans lesquelles toutes les actions et conséquences
+            résonnent simplement dans les limites de nos vies finies, la roue qui tourne et nous emporte tous fera en sorte qu’aucune forme de vie
+            ne soit autonome. Les vivants, les morts et les pas encore nés participent également à ce processus ; ils le partagent à tout moment.
+        </p>
+
+        <p>
+            Chaque naissance se produit d’une manière particulière, inimitable, tout comme chaque mort, pourtant les deux phénomènes sont perpétuels.
+            Il en va de même de la vie qui se déroule entre elles, et de notre jeunesse chérie. Tout comme l’enfance, l’âge adulte et la vieillesse,
+            la jeunesse est une constante de la vie et de la société. Nos vies au 21e siècle seraient méconnaissables pour un jeune du passé lointain.
+            Pourtant, leur espoir était le même que le nôtre. Leur ambition aussi, leur énergie ; il en va de même pour leurs sentiments d’injustice,
+            leur impression d’être ignorés et de ne pas avoir de contrôle sur leur vie.
+        </p>
+
+        <p>
+            Malgré les défis uniques de chaque époque, et la façon dont chaque génération se perçoit différemment, une chose reste vraie :
+            les jeunes sont systématiquement empêchés de participer à la construction de la société par les moyens du pouvoir.
+        </p>
+
+        <p>
+            Il est impératif de viser des réformes durables, systémiques et collaboratives qui permettent d’adapter les besoins des différents
+            groupes d’âge efficacement, sur le long terme et pas seulement dans notre vie. Nous devons construire des mécanismes pérennes
+            qui nous permettent de coexister et de prospérer, en veillant à ce que chaque génération ait une place à la table.
+        </p>
+
+        <p>
+            Du point de vue de nous, jeunes d’aujourd’hui, les structures dans lesquelles nous vivons sont construites et contrôlées
+            par les générations plus âgées. Nous vivons en même temps dans un monde fait pour les personnes âgées et nous sommes systématiquement
+            exclus des décisions qui définiront le monde que nous hériterons demain. Ce n’est pas un problème qui nous est propre.
+            La mise à l’écart constante des jeunes dans la prise de décision est une question profondément enracinée,
+            transmise de génération en génération.
+        </p>
+
+        <p>
+            C’est bel et bien un cycle : un jour, ce sera nous qui serons déconnectés, prenant des décisions sur des enjeux de jeunesse
+            que nous ne comprendrons pas entièrement.
+            <strong>Comment la jeunesse de demain fera-t-elle entendre sa voix quand cela arrivera&nbsp;?</strong>
+        </p>
+    </div>
 </div>
 
 
-            <!-- Première section -->
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la première section</h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe principal de la première section qui développe le premier aspect de notre analyse.
-                </p>
-                
-                <!-- Espace pour image -->
-                <div class="my-8 text-center">
-                    <div class="bg-gradient-to-r from-light-blue to-sky-blue rounded-lg p-12 mb-4">
-                        <i class="fas fa-image text-horizon-blue fa-4x mb-4"></i>
-                        <p class="text-horizon-blue font-semibold">Ici sera placée une image illustrative</p>
-                    </div>
-                    <p class="text-sm text-gray-600 italic">Légende de l'image explicative</p>
-                </div>
-                
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Ici paragraphe de suite qui développe les idées après l'image et fait la transition vers la section suivante.
-                </p>
-            </div>
 
+           <!-- Première section / CONTEXT -->
+<div class="bg-white rounded-lg shadow-md p-8 mb-8">
+    <h2 class="text-3xl font-bold text-horizon-blue mb-6"
+        x-text="currentLanguage === 'fr' ? 'CONTEXTE' : 'CONTEXT'">
+        CONTEXT
+    </h2>
+
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'" class="text-lg leading-relaxed text-gray-700 space-y-4">
+        <p>
+            The concept of youth, as old as humanity itself, has evolved significantly throughout history,
+            mirroring the evolution of society, education and culture.
+            For example, in the Middle Ages, the idea of youth was tied to mobility, being unmarried and the absence of complete legal autonomy.
+            It was only in the 19th and 20th centuries that, with the emergence of compulsory education and legal ages of majority,
+            youth became a distinct life stage akin to our current understanding.<sup>1</sup>
+        </p>
+
+        <p>
+            It is, however, impossible to encapsulate the meaning of youth across time and space with one sole definition,
+            for it exists wherever and whenever there is a society of humans.
+            Considering the broad differences that exist across cultural, socioeconomic, and political contexts,
+            we must acknowledge that the diversity of youth experiences is just as vast.<sup>2</sup>
+        </p>
+
+        <p>
+            With the aim of giving concrete form to an inherently abstract concept,
+            from this point onwards we will refer to youth as synonymous with young adults between the ages of <strong>18 and 29</strong>.
+            We will refer to such youth’s involvement in political activities in a broad sense, comprising direct and indirect participation in
+            the democratic process, activism, demonstrations, local initiatives, associations or community councils
+            and in general to all forms of action seeking impact at any scale.
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'" class="text-lg leading-relaxed text-gray-700 space-y-4">
+        <p>
+            Le concept de jeunesse, aussi ancien que l’humanité elle-même, a considérablement évolué au fil de l’histoire,
+            reflétant l’évolution de la société, de l’éducation et de la culture.
+            Par exemple, au Moyen Âge, l’idée de jeunesse était liée à la mobilité, au fait de ne pas être marié
+            et à l’absence d’autonomie juridique complète.
+            Ce n’est qu’aux XIXe et XXe siècles, avec l’émergence de la scolarité obligatoire et des âges légaux de la majorité,
+            que la jeunesse est devenue une étape de vie distincte, semblable à notre compréhension actuelle.<sup>1</sup>
+        </p>
+
+        <p>
+            Il est toutefois impossible d’enfermer le sens de la jeunesse à travers le temps et l’espace dans une seule définition,
+            car elle existe partout et à tout moment dès qu’il y a une société humaine.
+            Compte tenu des grandes différences culturelles, socio-économiques et politiques,
+            nous devons reconnaître que la diversité des expériences de la jeunesse est tout aussi vaste.<sup>2</sup>
+        </p>
+
+        <p>
+            Dans le but de donner une forme concrète à un concept par nature abstrait,
+            nous désignerons désormais par « jeunesse » les jeunes adultes âgés de <strong>18 à 29 ans</strong>.
+            Nous ferons référence à l’implication de ces jeunes dans les activités politiques au sens large,
+            comprenant la participation directe et indirecte au processus démocratique,
+            l’activisme, les manifestations, les initiatives locales, les associations ou conseils communautaires
+            et, plus généralement, toutes les formes d’action cherchant à avoir un impact à n’importe quelle échelle.
+        </p>
+    </div>
+
+    <!-- Optional: space for image -->
+    <div class="my-8 text-center">
+            <img src="img/article/1_bonus_ages.png" alt="Illustrative image about youth context">
+        <p class="text-sm text-gray-600 italic">
+            <span x-show="currentLanguage === 'en'">Different ages during life 18th century, <a href="https://commons.wikimedia.org/wiki/File:Les_différents_dégrés_des_Ages.jpg" class="text-horizon-blue"> full illustration</a> </span>
+            <span x-show="currentLanguage === 'fr'">Les différents dégrés des Ages 18ème siècle, <a href="https://commons.wikimedia.org/wiki/File:Les_différents_dégrés_des_Ages.jpg" class="text-horizon-blue"> illustration complète</a> </span>
+        </p>
+    </div>
+</div>
             <!-- Deuxième section -->
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la deuxième section</h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe qui introduit le deuxième aspect de notre analyse avec des données concrètes.
-                </p>
-                
-                <h3 class="text-2xl font-semibold text-ocean-blue mb-4">Sous-titre de section</h3>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe qui développe un sous-aspect spécifique avec des exemples et des références.
-                </p>
-                
-                <!-- Espace pour graphique/visualisation -->
-                <div class="my-8 text-center">
-                    <div class="bg-white border-2 border-light-blue rounded-lg p-12 mb-4">
-                        <i class="fas fa-chart-bar text-ocean-blue fa-4x mb-4"></i>
-                        <p class="text-ocean-blue font-semibold">Ici sera placé un graphique ou une visualisation</p>
-                    </div>
-                    <p class="text-sm text-gray-600 italic">Description du graphique et de ses enseignements</p>
-                </div>
-                
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Ici paragraphe qui analyse les données présentées et en tire des conclusions.
-                </p>
-            </div>
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+    
+    <!-- Section Title -->
+    <h2 class="text-3xl font-bold text-horizon-blue mb-6">
+        <span x-show="currentLanguage === 'en'">Being young yesterday and today</span>
+        <span x-show="currentLanguage === 'fr'">Être jeune hier et aujourd’hui</span>
+    </h2>
+
+    <!-- Intro Paragraph -->
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            We all live in community, whether in a small village, a bustling city, or a sprawling megacity, yet many of us feel disconnected from the decision-making processes that shape these places we inhabit. Despite living in a hyper-connected, globalized world where information from every corner of the globe is one touch away, we often find ourselves unable to enact change right where we live. This disconnect makes us bystanders in our own communities, aware of the broader world yet struggling to make an impact even at the local level, where the decisions that directly affect our lives happen.
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            Nous vivons tous en communauté, que ce soit dans un petit village, une ville animée ou une mégapole tentaculaire, et pourtant beaucoup d’entre nous se sentent déconnectés des processus de décision qui façonnent ces lieux que nous habitons. Bien que nous vivions dans un monde hyperconnecté et globalisé où l’information de tous les coins du globe est à portée de main, nous nous retrouvons souvent incapables de provoquer des changements là où nous vivons. Ce fossé fait de nous des spectateurs de nos propres communautés, conscients du monde plus large mais peinant à avoir un impact même au niveau local, là où se prennent les décisions qui affectent directement nos vies.
+        </span>
+    </p>
+
+    <!-- Sub-quote intro -->
+    <h3 class="text-2xl font-semibold text-ocean-blue mb-4 italic">
+        <span >“Los jóvenes de hoy son de cristal”</span>
+    </h3>
+
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            Or “young people nowadays are made of glass”, as the saying goes in Spain.<br/> 
+The contemporary generación de cristal, or “glass generation” myth and all its attached stereotypes (laziness, oversensitivity, aversion to commitment, a habit of complaining) is hardly a new idea. The perception of the next youngest generation as being weaker and somehow more problematic than the preceding one is comically old.
+        <br/> Case in point, the following quote by Socrates, year 400 BCE:</span>
+        <span x-show="currentLanguage === 'fr'">
+            Le mythe contemporain de la <em>génération de cristal</em> et tous les stéréotypes qui y sont associés (paresse, hypersensibilité, aversion à l’engagement, tendance à se plaindre) n’ont rien de nouveau. La perception selon laquelle la génération suivante est plus faible et plus problématique que la précédente est d’une ancienneté presque comique. 
+            <br/> Cas typique, le discours de Socrates, année 400 BCE:
+        </span>
+    </p>
+
+    <!-- Quote Socrate -->
+    <blockquote class="border-l-4 border-sky-400 pl-4 italic text-sky-600 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            “The children now love luxury; they have bad manners, contempt for authority; they show disrespect for elders and love chatter in place of exercise. Children are now tyrants, not the servants of their households. They no longer rise when elders enter the room. They contradict their parents, chatter before company, gobble up dainties at the table, cross their legs, and tyrannize their teachers.” <sup>2</sup>
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            « Les enfants aiment désormais le luxe ; ils ont de mauvaises manières, du mépris pour l’autorité ; ils manquent de respect envers les anciens et préfèrent bavarder plutôt que s’exercer. Les enfants sont désormais des tyrans, non plus les serviteurs de leurs foyers. Ils ne se lèvent plus quand un aîné entre dans la pièce. Ils contredisent leurs parents, bavardent devant les invités, se goinfrent de friandises à table, croisent les jambes et tyrannisent leurs maîtres. »<sup>2</sup>
+        </span>
+    </blockquote>
+
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            Sad to see such signs of moral decline warned about and ignored for so long... In the words of Reverend Enos Hitchcock, an 18th-century American minister, educator, and Revolutionary War chaplain:</span>
+        <span x-show="currentLanguage === 'fr'">
+            C'est triste de voir ces fameux signes de déclin moral si longtemps ignoré... Comme le dit le révérend Enos Hitchcock, ministre américain et enseignant au XVIIIe siecle:</span>
+    </p>
+
+    <!-- Reverend Enos Hitchcock -->
+    <blockquote class="border-l-4 border-sky-400 pl-4 italic text-sky-600 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            “The free access which many young people have to romances, novels, and plays has poisoned the mind and corrupted the morals of many a promising youth…” <sup>3</sup>
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            « L’accès libre que beaucoup de jeunes ont aux romans, aux pièces et aux récits a empoisonné l’esprit et corrompu la morale de bien des jeunes prometteurs… »<sup>3</sup>
+        </span>
+    </blockquote>
+
+    <!-- Analysis paragraphs -->
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            Irony cast aside, the “kids these days” phenomenon is fairly well researched, its persistence throughout history has likely more to do with the psychology of any given elder generation than it does with the shortcomings of its younger counterpart.<sup>4</sup>
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            Ironie mise à part, le phénomène des « jeunes d’aujourd’hui » est assez bien étudié, sa persistance à travers l’histoire étant probablement davantage liée à la psychologie de chaque génération plus âgée qu’aux prétendus défauts de la génération plus jeune. <sup>4</sup>
+        </span>
+    </p>
+
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            Given that young people are generally perceived as lazy and uninterested, while they themselves generally feel ignored and misunderstood, there is reason to believe that perhaps the very real gap in political participation is, first, a gap of the psyche. A change in perspective during the transition from youth into adulthood causes this intergenerational paradigm to unfold again and again.
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            Étant donné que les jeunes sont généralement perçus comme paresseux et désintéressés, alors qu’ils se sentent eux-mêmes ignorés et incompris, il y a des raisons de croire que le fossé bien réel de la participation politique est d’abord un fossé psychologique. Un changement de perspective lors de la transition de la jeunesse à l’âge adulte provoque à maintes reprises ce paradigme intergénérationnel.
+        </span>
+    </p>
+
+    <!-- Political disengagement -->
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            Politicians respond directly to votes, not values. As a result, younger voters, with their energy and vision for the future, are often politically sidelined because they represent a smaller share of the electorate. Let’s take France as an example. As of recent years, there are twice more citizens over the age of 60 than there are young adults aged 18 to 29. <sup>5</sup> This demographic disparity has a profound effect on political priorities. With older voters turning out more reliably and in greater numbers, they wield disproportionate influence over election outcomes. In turn, politicians are incentivized to tailor policies that appeal to older citizens over youth related affairs.
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            Les politiciens répondent directement aux votes, non aux valeurs. Par conséquent, les jeunes électeurs, avec leur énergie et leur vision de l’avenir, sont souvent marginalisés politiquement car ils représentent une part plus faible de l’électorat. Par exemple, en France, il y a deux fois plus de citoyens de plus de 60 ans que de jeunes adultes âgés de 18 à 29 ans. <sup>5</sup> Ce déséquilibre démographique oriente les priorités politiques vers les générations plus âgées.
+        </span>
+    </p>
+
+    <!-- Blue Quote from youth -->
+    <blockquote class="border-l-4 border-sky-400 pl-4 italic text-sky-600 mb-6">
+        <span x-show="currentLanguage === 'en'">
+            “There is no political group I feel completely represented by. So yes, I usually vote for the ‘least bad’ option.”<sup>6</sup>
+        </span>
+        <span x-show="currentLanguage === 'fr'">
+            « Il n’y a aucun groupe politique dans lequel je me sens complètement représenté. Donc oui, je vote généralement pour la “moins mauvaise” option. » — Jeune électeur
+        </span>
+    </blockquote>
+
+    <!-- Final conclusion -->
+<p class="text-lg leading-relaxed text-gray-700">
+    <span x-show="currentLanguage === 'en'">
+        Today, young people, frustrated by their lack of power in traditional institutions, disengage from politics altogether, 
+        which further reduces their voting share and makes them even less attractive to political strategists. Higher rates of abstention 
+        are coupled with a turn towards extreme ideologies on both the far right and far left<sup>7</sup>, all the while, the policy landscape reflects 
+        the immediate concerns of older generations: pensions, healthcare, property taxes. Issues crucial to younger demographics, such as 
+        climate change, affordable housing, education funding, or digital rights, remain under-prioritized or addressed only by symbolic gestures. 
+        <br><br>
+        In short, being young has become politically unprofitable. 
+        <br><br>
+        It is only natural, then, that new forms of involvement, different from the traditional ways of voting and protesting, 
+        have become the go-to instruments for contemporary youth to raise their voices. Young people today engage through petitions, 
+        boycotts, and social media, leveraging these platforms to voice their concerns and influence public opinion. This shift highlights 
+        the evolving landscape of civic participation and the need to acknowledge these alternative forms of engagement as valid and impactful. 
+        <sup>8</sup>
+    </span>
+
+    <span x-show="currentLanguage === 'fr'">
+        Aujourd’hui, les jeunes, frustrés par leur manque de pouvoir dans les institutions traditionnelles, se désengagent 
+        de la politique dans son ensemble, ce qui réduit encore leur part électorale et les rend encore moins attractifs pour 
+        les stratèges politiques. Les taux plus élevés d’abstention s’accompagnent d’un virage vers des idéologies extrêmes, 
+        aussi bien à l’extrême droite qu’à l’extrême gauche<sup>7</sup>, tandis que le paysage politique reflète surtout les préoccupations 
+        immédiates des générations plus âgées : retraites, santé, impôts fonciers. Les enjeux cruciaux pour les jeunes générations, 
+        tels que le changement climatique, le logement abordable, le financement de l’éducation ou les droits numériques, restent 
+        sous-priorisés ou ne sont traités que par des gestes symboliques. 
+        <br><br>
+        En résumé, être jeune est devenu politiquement « non rentable ». 
+        <br><br>
+        Il est donc naturel que de nouvelles formes d’engagement, différentes des modes traditionnels de vote et de protestation, 
+        soient devenues les instruments privilégiés par la jeunesse contemporaine pour faire entendre sa voix. Aujourd’hui, 
+        les jeunes s’engagent à travers des pétitions, des boycotts et les réseaux sociaux, utilisant ces plateformes pour exprimer 
+        leurs préoccupations et influencer l’opinion publique. Ce changement met en lumière l’évolution du paysage de la participation 
+        citoyenne et la nécessité de reconnaître ces formes alternatives d’engagement comme légitimes et impactantes. 
+        <sup>8</sup>
+    </span>
+</p>
+
+
+</div>
 
             <!-- Troisième section -->
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Titre de la troisième section</h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe qui présente les solutions et recommandations issues de notre analyse.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-6 my-8">
-                    <div class="bg-gradient-to-br from-hope-yellow to-sky-blue rounded-lg p-6">
-                        <h4 class="text-xl font-bold text-horizon-blue mb-3">Point clé 1</h4>
-                        <p class="text-horizon-blue">Ici description du premier point important de nos recommandations.</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-sky-blue to-ocean-blue rounded-lg p-6">
-                        <h4 class="text-xl font-bold text-white mb-3">Point clé 2</h4>
-                        <p class="text-white">Ici description du deuxième point important de nos recommandations.</p>
-                    </div>
-                </div>
-                
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Ici paragraphe qui synthétise les recommandations et leur mise en œuvre pratique.
-                </p>
-            </div>
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+    <h2 class="text-3xl font-bold text-horizon-blue mb-6">
+        <span x-show="currentLanguage === 'en'">What’s happening now?</span>
+        <span x-show="currentLanguage === 'fr'">Que se passe-t-il aujourd’hui&nbsp;?</span>
+    </h2>
 
-            <!-- Conclusion -->
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-                <h2 class="text-3xl font-bold text-horizon-blue mb-6">Conclusion</h2>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ici paragraphe de conclusion qui résume les principaux enseignements de notre recherche et leur portée.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Ici paragraphe final qui ouvre sur les perspectives d'avenir et les actions à entreprendre.
-                </p>
-            </div>
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Unsurprisingly, young people are massively underrepresented in decision-making roles. Whether in parliament, government or city councils, 
+            there are very few young faces in positions of power. <sup>9</sup>
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            The mechanism that is keeping these spots out of most young people’s reach is being helped by the inherent elitism of power, which is concentrated 
+            and accumulated, its resources cultivated over a lifetime by way of background and a wealth of connections.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            It is aided too by the political illiteracy that piles high on the shoulders of the young. They are simultaneously among the most chronically disaffected 
+            brackets of society and also part of the larger flock that is often kept as untrained in political matters as possible. This lack of awareness is exacerbated 
+            by media business models that prioritize sensationalism and emotional buzz over thorough, informative reporting. <sup>10</sup>
+        </p>
+        <blockquote class="border-l-4 border-sky-400 pl-4 italic text-sky-600 mb-6">
+            “Although I participated in the election in Portugal and collected signatures for the creation of a new party, 
+            the truth is that, in my local community I don’t feel represented nor involved in political decisions” <sup>11</sup>
+        </blockquote>
+    </div>
 
-            <!-- Références/Sources -->
-            <div class="bg-gray-100 rounded-lg p-8">
-                <h2 class="text-2xl font-bold text-horizon-blue mb-4">Sources et références</h2>
-                <p class="text-gray-700 mb-4">Ici sera placée la liste des sources utilisées dans l'article :</p>
-                <ul class="text-gray-700 space-y-2">
-                    <li>• Référence 1 - Ici titre et détails de la source</li>
-                    <li>• Référence 2 - Ici titre et détails de la source</li>
-                    <li>• Référence 3 - Ici titre et détails de la source</li>
-                </ul>
-            </div>
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Sans surprise, les jeunes sont massivement sous-représentés dans les rôles de décision. Que ce soit au parlement, au gouvernement 
+            ou dans les conseils municipaux, il y a très peu de visages jeunes dans les postes de pouvoir. <sup>9</sup>
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Le mécanisme qui maintient ces postes hors de portée de la majorité des jeunes est renforcé par l’élitisme inhérent du pouvoir, 
+            qui est concentré et accumulé, ses ressources cultivées tout au long d’une vie grâce à l’origine sociale et à un riche réseau de relations.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Il est également alimenté par l’analphabétisme politique qui pèse lourdement sur les épaules des jeunes. Ils sont à la fois parmi 
+            les catégories les plus chroniquement désaffectées de la société et aussi parmi la masse plus large que l’on maintient souvent 
+            aussi peu formée que possible aux questions politiques. Ce manque de conscience est aggravé par les modèles économiques des médias 
+            qui privilégient le sensationnel et l’émotionnel au détriment d’un journalisme rigoureux et informatif. <sup>10</sup>
+        </p>
+        <blockquote class="border-l-4 border-sky-400 pl-4 italic text-sky-600 mb-6">
+            « Bien que j’aie participé à l’élection au Portugal et recueilli des signatures pour la création d’un nouveau parti, 
+            la vérité est que, dans ma communauté locale, je ne me sens ni représenté ni impliqué dans les décisions politiques » <sup>11</sup>
+        </blockquote>
+        
+    </div>
+
+    <!-- Additional subsection with text + image side by side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8">
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700">
+            In this context, it is no surprise that an older, power-holding generation expects the younger to follow in its footsteps; 
+            for young people to bide their time, to patiently wait for their turn to exert influence, just like themselves had to. 
+            By assimilating the unfairness of the model and forgetting the frustration they had to face in their youth, the gap in representation 
+            will reproduce itself one more time. At best, the powerful will concede to include the young as decoration or token, a sign of good will 
+            with no meaningful representation attached. This way, they can be involved in the process without having a genuine say on decisions, 
+            initiatives or direction of any given project. <sup>12</sup>
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700">
+            Dans ce contexte, il n’est pas surprenant qu’une génération plus âgée, détentrice du pouvoir, s’attende à ce que les jeunes 
+            suivent ses traces ; que les jeunes patientent et attendent leur tour pour exercer de l’influence, tout comme eux ont dû le faire. 
+            En assimilant l’injustice du modèle et en oubliant la frustration qu’ils ont eux-mêmes connue dans leur jeunesse, 
+            l’écart de représentation se reproduira encore une fois. Au mieux, les puissants concéderont d’inclure les jeunes comme décoration ou symbole, 
+            un signe de bonne volonté sans réelle représentation. De cette façon, ils peuvent être associés au processus sans avoir véritablement leur mot 
+            à dire sur les décisions, les initiatives ou l’orientation d’un projet donné. <sup>12</sup>
+        </p>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center">
+        <img src="img/article/2.png" alt="Illustration" class="rounded-lg max-h-80 object-contain">
+    </div>
+</div>
+
+</div>
+
+<!-- Quatrième section -->
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+    <h2 class="text-3xl font-bold text-horizon-blue mb-6">
+        <span x-show="currentLanguage === 'en'">Why does it matter?</span>
+        <span x-show="currentLanguage === 'fr'">Pourquoi est-ce important&nbsp;?</span>
+    </h2>
+
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            The significant lack of youth participation and representation is not just a minor oversight. 
+            It's a critical issue that impacts the very fabric of our democracy, the relevance of our policies, 
+            and the trajectory of society as a whole. Is it unrealistic to imagine a world where the voices of 
+            young people are not only heard but also a driving force in shaping the present and the future?
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Let us consider the policies being crafted today. Without young input, these policies often reflect 
+            a narrow viewpoint that focuses on the immediate concerns of older generations. What about the issues 
+            that disproportionately affect young people today? What about the long-term challenges that only them 
+            will have to face? 
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Le manque significatif de participation et de représentation des jeunes n’est pas un simple oubli mineur. 
+            C’est un enjeu crucial qui impacte le tissu même de notre démocratie, la pertinence de nos politiques et 
+            la trajectoire de la société dans son ensemble. Est-il irréaliste d’imaginer un monde où la voix des jeunes 
+            ne serait pas seulement entendue, mais deviendrait une force motrice pour façonner le présent et l’avenir&nbsp;?
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Considérons les politiques élaborées aujourd’hui. Sans contribution des jeunes, ces politiques reflètent 
+            souvent une vision étroite centrée sur les préoccupations immédiates des générations plus âgées. Qu’en est-il 
+            des problèmes qui touchent de manière disproportionnée les jeunes d’aujourd’hui&nbsp;? Qu’en est-il des défis à long terme 
+            qu’eux seuls devront affronter&nbsp;? 
+        </p>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center mb-6">
+        <img src="img/article/3.png" alt="Illustration on youth participation" class="rounded-lg  max-h-96 object-contain">
+    </div>
+
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700">
+            Today, housing is a prime example. At least in developed nations, unaffordable rent in the cities disproportionately 
+            affects young people <sup>13</sup>, where the majority of them study and work before having achieved financial stability 
+            and independence. Overpriced housing raises a problem today, because making ends meet is more difficult for young people 
+            than it used to be, and will raise others in the future, as it prevents young people from building up wealth and thus 
+            jeopardises their financial future. The intergenerational divide deepens, as hallmarks of young adulthood such as saving 
+            and acquiring a first home are relics of the past, as alien to most young people today as owning a cow.
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700">
+            Aujourd’hui, le logement en est un exemple frappant. Du moins dans les pays développés, les loyers inabordables 
+            dans les villes touchent de manière disproportionnée les jeunes <sup>13</sup>, là où la majorité d’entre eux étudient et travaillent 
+            avant d’avoir atteint une stabilité et une indépendance financières. Des loyers excessifs posent déjà un problème aujourd’hui, 
+            car il est plus difficile pour les jeunes de joindre les deux bouts qu’auparavant, et ils en poseront d’autres demain, 
+            car ils empêchent les jeunes de constituer un patrimoine et compromettent ainsi leur avenir financier. 
+            Le fossé intergénérationnel se creuse&nbsp;: des étapes emblématiques de la vie de jeune adulte, telles que l’épargne ou l’achat 
+            d’un premier logement, deviennent des reliques du passé, aussi étrangères aux jeunes d’aujourd’hui que le fait de posséder une vache.
+        </p>
+    </div>
+
+    <br/> 
+
+        <!-- English content continuation -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Mental health is another matter where an acute perspective shift has happened. There is a new language around it, 
+            different priorities and altogether greater emphasis in underlying its importance at an individual and collective level. 
+            A thoroughly modern concern that disproportionately affects the youth, it is crucial that they have a say in how it is dealt with in the public domain. <sup>14</sup>
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            What is critical to internalise is that examples of current youth related preoccupations (housing, mental health, climate change, etc.) 
+            will change form or be replaced by the time us current young people are no longer so. New problems will arise and challenge the youth when we forget what being young feels like. 
+            If we desire to thwart the vicious cycle and allow the youth, whatever it may be at any given moment, to be represented, we must guarantee a system of representation that involves 
+            young people in a meaningful way at all times, and not just narrowly in what pertains to current affairs.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 font-semibold italic text-horizon-blue">
+            Addressing youth underrepresentation is not just a necessity; it's an opportunity. An opportunity to foster a more inclusive, forward-thinking, and equitable society. 
+            It's time to ask ourselves: <br><br>
+            Are we ready to listen, engage, and empower the voices of the future?
+        </p>
+    </div>
+
+    <!-- French content continuation -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            La santé mentale est un autre domaine où un changement de perspective aigu s’est produit. Un nouveau langage est apparu, 
+            avec des priorités différentes et un accent beaucoup plus marqué sur son importance au niveau individuel et collectif. 
+            Préoccupation résolument moderne qui touche de manière disproportionnée les jeunes, il est crucial qu’ils aient leur mot à dire 
+            sur la manière dont elle est traitée dans l’espace public. <sup>14</sup>
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Ce qu’il est essentiel de comprendre, c’est que les exemples de préoccupations actuelles liées à la jeunesse 
+            (logement, santé mentale, changement climatique, etc.) changeront de forme ou seront remplacés lorsque nous, les jeunes actuels, ne le serons plus. 
+            De nouveaux problèmes apparaîtront et mettront les jeunes au défi lorsque nous oublierons ce que signifie être jeune. 
+            Si nous voulons briser ce cercle vicieux et permettre à la jeunesse, quelle qu’elle soit à un moment donné, d’être représentée, 
+            nous devons garantir un système de représentation qui implique les jeunes de manière significative en tout temps, 
+            et pas seulement de façon limitée aux affaires du moment.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 font-semibold italic text-horizon-blue">
+            Traiter le problème de la sous-représentation des jeunes n’est pas seulement une nécessité&nbsp;; c’est une opportunité. 
+            Une opportunité de construire une société plus inclusive, tournée vers l’avenir et équitable. 
+            Il est temps de nous demander&nbsp;: <br><br>
+            Sommes-nous prêts à écouter, à nous engager et à donner du pouvoir aux voix de l’avenir&nbsp;?
+        </p>
+    </div>
+
+</div>
+      <!-- Conclusion Section -->
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+    <h2 class="text-3xl font-bold text-horizon-blue mb-6">
+        <span x-show="currentLanguage === 'en'">Conclusion</span>
+        <span x-show="currentLanguage === 'fr'">Conclusion</span>
+    </h2>
+
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            If we zoom out of the current problems our generation most worries about, such as housing, mental health, climate change or social media driven polarisation, 
+            we’ll soon realise that although they are different from the problems our previous generations have faced 
+            (anti-war sentiments or the conquest of civil and women's rights, as quick examples) they stem from the same source of frustration: 
+            the youth cannot influence society by the usual means of politics.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Breaking the cycle of youth exclusion from political life is neither a naïve ideal nor a democratic luxury, it is a structural imperative, 
+            a vital condition for the health of our societies. If we want to live in a just, stable, and equal society, we must act towards this goal not tomorrow, but right now.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            The aim of authentic, enduring and fruitful youth action for those of us who wish to wage it now is not merely to gain command of the rest our finite lives, 
+            that is, today’s youth faced with today’s and tomorrow’s challenges, but to ensure that youth, as a permanent stage and thus a permanent societal segment 
+            will obtain lasting mechanisms of representation and influence at all times. Always a saying, always a seat at the proverbial table.
+        </p>
+        <p class="text-lg italic text-horizon-blue font-semibold mb-6">
+            “Empowering youth means building systems where their voices aren’t just heard, but drive change.” <sup>15</sup>
+        </p>
+        <p class="text-xl font-bold text-gray-800">
+            So, how do we break the cycle?
+        </p>
+    </div>
+
+    <!-- French content -->
+    <div x-show="currentLanguage === 'fr'">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Si nous prenons du recul par rapport aux problèmes actuels qui préoccupent le plus notre génération, comme le logement, la santé mentale, 
+            le changement climatique ou la polarisation alimentée par les réseaux sociaux, nous réaliserons rapidement que bien qu’ils soient différents 
+            de ceux auxquels les générations précédentes ont été confrontées (mouvements anti-guerre ou conquête des droits civils et des droits des femmes, pour ne citer que quelques exemples), 
+            ils proviennent de la même source de frustration&nbsp;: la jeunesse ne peut pas influencer la société par les moyens politiques habituels.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Briser le cycle de l’exclusion des jeunes de la vie politique n’est ni un idéal naïf ni un luxe démocratique, 
+            c’est un impératif structurel, une condition vitale pour la santé de nos sociétés. 
+            Si nous voulons vivre dans une société juste, stable et égalitaire, nous devons agir dans ce sens non pas demain, mais dès maintenant.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            L’objectif d’une action authentique, durable et féconde de la jeunesse pour ceux d’entre nous qui souhaitent la mener aujourd’hui 
+            n’est pas seulement de prendre en main le reste de nos vies finies, c’est-à-dire la jeunesse d’aujourd’hui confrontée aux défis d’aujourd’hui et de demain, 
+            mais de garantir que la jeunesse, en tant qu’étape permanente et donc segment permanent de la société, obtienne des mécanismes durables de représentation et d’influence en tout temps. 
+            Toujours une voix, toujours une place à la table proverbiale.
+        </p>
+        <p class="text-lg italic text-horizon-blue font-semibold mb-6">
+            «&nbsp;Donner du pouvoir à la jeunesse signifie construire des systèmes où leurs voix ne sont pas seulement entendues, 
+            mais où elles impulsent le changement.&nbsp;» <sup>15</sup>
+        </p>
+        <p class="text-xl font-bold text-gray-800">
+            Alors, comment briser ce cycle&nbsp;?
+        </p>
+    </div>
+
+     <!-- Additional subsection with text + image side by side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8">
+    <!-- English content -->
+    <div x-show="currentLanguage === 'en'">
+        <p class="text-lg leading-relaxed text-gray-700">
+            The goal of this article is to open a space of reflection. There are plenty of institutional reforms that could be enacted, just as there are a lot of ways to approach new, alternative means of involvement. How would you help young people to be actively engaged, fully participate and in hold of power to make change happen?
+            <br/> <br/> 
+            Do you have a legal or institutional solution? Perhaps you know a way for young people to engage locally? Have you managed a project that has achieved just that?
+            <br/> <br/>
+            If you want to learn more about this subject, you can find additional information on this website and the bibliography below.
+            <br/> <br/>
+            Feel free to share your thoughts with us !
+        </p>
+    </div>
+
+    <!-- French content -->
+<div x-show="currentLanguage === 'fr'">
+    <p class="text-lg leading-relaxed text-gray-700">
+        Le but de cet article est d’ouvrir un espace de réflexion. Il existe de nombreuses réformes institutionnelles possibles, tout comme une variété d’approches alternatives pour favoriser l’engagement. Comment aideriez-vous les jeunes à s’impliquer activement, à participer pleinement et à détenir le pouvoir nécessaire pour provoquer le changement ?
+        <br/> <br/>
+        Avez-vous une solution juridique ou institutionnelle ? Connaissez-vous un moyen pour que les jeunes s’engagent localement ? Avez-vous mené un projet qui a permis cela ?
+        <br/> <br/>
+        Si vous souhaitez en savoir plus sur ce sujet, vous trouverez des informations complémentaires sur ce site ainsi que dans la bibliographie ci-dessous.
+        <br/> <br/>
+        N’hésitez pas à partager vos idées avec nous !
+    </p>
+</div>
+
+    <!-- Image -->
+    <div class="flex justify-center">
+        <img src="img/article/4.png" alt="Illustration" class="rounded-lg max-h-80 object-contain">
+    </div>
+</div>
+</div>
+
+
+           <!-- 📚 Sources and References -->
+<div class="bg-gray-100 rounded-lg p-8 space-y-8">
+  <h2 class="text-2xl font-bold text-horizon-blue mb-4">Sources</h2>
+
+  <!-- Reference 1 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">1) La jeunesse comme concept culturel</h3>
+      <p class="text-gray-700">
+        Plusieurs articles explorent l’idée que la jeunesse est une construction sociale qui varie selon les époques et les cultures. Par exemple :
+        <br/>
+        • <a target="_blank" href="https://ijrar.org/papers/IJRAR19D4275.pdf" class="text-blue-600 underline">ijrar.org</a> — étude sur l’évolution du concept de jeunesse dans l’histoire.<br/>
+        • <a target="_blank" href="https://hedgehogreview.com/issues/youth-culture/articles/wither-adulthood" class="text-blue-600 underline">hedgehogreview.com</a> — réflexion sur la jeunesse au Moyen Âge.<br/>
+        • <a target="_blank" href="https://www.persee.fr/doc/caf_1149-1590_1995_num_40_1_1690" class="text-blue-600 underline">persee.fr</a> — article français sur l’histoire de la jeunesse.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">1) Youth as a culturally defined concept</h3>
+      <p class="text-gray-700">
+        Several articles explore how youth is a social construct that varies across time and cultures. For example:
+        <br/>
+        • <a target="_blank" href="https://ijrar.org/papers/IJRAR19D4275.pdf" class="text-blue-600 underline">ijrar.org</a> — study on the historical evolution of youth.<br/>
+        • <a target="_blank" href="https://hedgehogreview.com/issues/youth-culture/articles/wither-adulthood" class="text-blue-600 underline">hedgehogreview.com</a> — reflection on youth in the Middle Ages.<br/>
+        • <a target="_blank" href="https://www.persee.fr/doc/caf_1149-1590_1995_num_40_1_1690" class="text-blue-600 underline">persee.fr</a> — French article on youth in history.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 2 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2) Citation attribuée à Socrate</h3>
+      <p class="text-gray-700">
+        Cette citation souvent attribuée à Socrate est en réalité issue d’un résumé des plaintes courantes envers les jeunes dans la Grèce antique. Cela ne change pas l'argument que nous souhaitions mettre en valeur et validé par l'étude dans la réference 1. numéro 4 ci-dessous. La citation semble provenir d’un texte de Kenneth John Freeman (1907), et non directement de Socrate :
+        <br/>
+        • <a target="_blank" href="https://www.bartleby.com/lit-hub/respectfully-quoted/socrates-469399-b-c/#" class="text-blue-600 underline">bartleby.com</a> — source de la citation.<br/>
+        • <a target="_blank" href="https://quoteinvestigator.com/2010/05/01/misbehave/" class="text-blue-600 underline">quoteinvestigator.com</a> — analyse de l’origine réelle de la citation.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2) Quote attributed to Socrates</h3>
+      <p class="text-gray-700">
+        Some say this quote is not really from Socrates but is simply issued from common complaints about youth in ancient Greece, which still makes our point stand to illustrate what the study in the 4th link says. It originates from Kenneth John Freeman’s 1907 dissertation, not from Socrates himself:
+        <br/>
+        • <a target="_blank" href="https://www.bartleby.com/lit-hub/respectfully-quoted/socrates-469399-b-c/#" class="text-blue-600 underline">bartleby.com</a> — citation source.<br/>
+        • <a target="_blank" href="https://quoteinvestigator.com/2010/05/01/misbehave/" class="text-blue-600 underline">quoteinvestigator.com</a> — analysis of the quote’s true origin.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 3 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">3) Citation du Révérend Enos Hitchcock (1790)</h3>
+      <p class="text-gray-700">
+        Cette citation provient des <em>Memoirs of the Bloomsgrove Family</em> écrits par le Révérend Enos Hitchcock en 1790. Elle illustre les critiques récurrentes envers la jeunesse à travers les siècles. On peut la retrouver dans cette compilation :
+        <br/>
+        • <a target="_blank" href="https://historyhustle.com/2500-years-of-people-complaining-about-the-younger-generation" class="text-blue-600 underline">historyhustle.com</a> — recueil de citations historiques sur la jeunesse.<br/>
+        • <a target="_blank" href="https://quod.lib.umich.edu/cgi/t/text/text-idx?c=evans;cc=evans;rgn=main;view=text;idno=N17447.0001.001" class="text-blue-600 underline">quod.lib.umich.edu</a> — texte original, page 186.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">3) Quote from Reverend Enos Hitchcock (1790)</h3>
+      <p class="text-gray-700">
+        This quote comes from <em>Memoirs of the Bloomsgrove Family</em> by Reverend Enos Hitchcock, published in 1790. It reflects the long-standing tradition of older generations criticizing youth. You can find it here:
+        <br/>
+        • <a target="_blank" href="https://historyhustle.com/2500-years-of-people-complaining-about-the-younger-generation" class="text-blue-600 underline">historyhustle.com</a> — compilation of historical quotes about youth.<br/>
+        • <a target="_blank" href="https://quod.lib.umich.edu/cgi/t/text/text-idx?c=evans;cc=evans;rgn=main;view=text;idno=N17447.0001.001" class="text-blue-600 underline">quod.lib.umich.edu</a> — original text, page 186.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 4 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">4) Étude sur les stéréotypes persistants envers les jeunes</h3>
+      <p class="text-gray-700">
+        Cette étude scientifique démontre que les stéréotypes négatifs envers la jeunesse sont constants à travers les générations. Elle analyse pourquoi les jeunes sont souvent perçus comme moins compétents ou moins respectueux :
+        <br/>
+        • <a target="_blank" href="https://www.science.org/doi/10.1126/sciadv.aav5916" class="text-blue-600 underline">science.org</a> — étude intitulée “Kids these days: Why the youth of today seem lacking”.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">4) Study on persistent stereotypes about youth</h3>
+      <p class="text-gray-700">
+        This scientific study shows that negative stereotypes about young people have persisted across generations. It explores why youth are often seen as less capable or respectful:
+        <br/>
+        • <a target="_blank" href="https://www.science.org/doi/10.1126/sciadv.aav5916" class="text-blue-600 underline">science.org</a> — study titled “Kids these days: Why the youth of today seem lacking”.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 5 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">5) Données démographiques en France</h3>
+      <p class="text-gray-700">
+        Selon l’INSEE, les personnes âgées de plus de 60 ans représentent 26,9 % de la population française, soit deux fois plus que les jeunes de 18 à 29 ans, qui ne représentent que 13,7 %. Ces chiffres illustrent un déséquilibre générationnel :
+        <br/>
+        • <a target="_blank" href="https://www.insee.fr/fr/statistiques/4277619?sommaire=4318291#graphique-figure1" class="text-blue-600 underline">insee.fr</a> — population par âge.<br/>
+        • <a target="_blank" href="https://www.insee.fr/fr/statistiques/6047721?sommaire=6047805" class="text-blue-600 underline">insee.fr</a> — statistiques sur les jeunes adultes.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">5) Demographic data in France</h3>
+      <p class="text-gray-700">
+        According to INSEE, people over 60 make up 26.9% of the French population—twice as many as those aged 18 to 29, who represent only 13.7%. These figures highlight a generational imbalance:
+        <br/>
+        • <a target="_blank" href="https://www.insee.fr/fr/statistiques/4277619?sommaire=4318291#graphique-figure1" class="text-blue-600 underline">insee.fr</a> — population by age.<br/>
+        • <a target="_blank" href="https://www.insee.fr/fr/statistiques/6047721?sommaire=6047805" class="text-blue-600 underline">insee.fr</a> — statistics on young adults.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 6 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">6) Citation d’un jeune citoyen</h3>
+      <p class="text-gray-700">
+        Cette citation provient d’un entretien réalisé avec un jeune citoyen, disponible dans la section “plus d’infos” de notre site. Elle illustre un point de vue personnel sur les enjeux abordés dans l’article.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">6) Quote from a young citizen</h3>
+      <p class="text-gray-700">
+        This quote comes from an interview with a young citizen, available in the “more infos” section of our website. It offers a personal perspective on the issues discussed in the article.
+      </p>
+    </div>
+  </div>
+
+   <!-- Reference 7 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">7) Montée des idéologies extrêmes et rejet du système électoral</h3>
+      <p class="text-gray-700">
+        Une analyse récente montre une montée des idéologies extrêmes chez les jeunes en Europe (Allemagne, Portugal, France…), souvent accompagnée d’un rejet du vote traditionnel par l’abstention ou le vote protestataire. Ce phénomène est documenté dans :
+        <br/>
+        • <a target="_blank" href="https://www.dkjs.de/wp-content/uploads/2025/02/analyse-politische-einstellungen-und-wahlverhalten-junger-menschen.pdf" class="text-blue-600 underline">dkjs.de</a> — article allemand sur les attitudes politiques et le comportement électoral des jeunes.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">7) Rise of extreme ideologies and rejection of voting systems</h3>
+      <p class="text-gray-700">
+        A recent analysis highlights the rise of extreme ideologies among youth in Europe (Germany, Portugal, France…), often accompanied by rejection of traditional voting through abstention or protest votes. This trend is documented in:
+        <br/>
+        • <a target="_blank" href="https://www.dkjs.de/wp-content/uploads/2025/02/analyse-politische-einstellungen-und-wahlverhalten-junger-menschen.pdf" class="text-blue-600 underline">dkjs.de</a> — German article on youth political attitudes and voting behavior.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 8 -->
+  <div class="border-l-4 border-horizon-blue pl-4">
+    <!-- French -->
+    <div x-show="currentLanguage === 'fr'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">8) Nouveaux moyens d’engagement des jeunes</h3>
+      <p class="text-gray-700">
+        Ce rapport portugais explore les nouvelles formes d’engagement des jeunes, au-delà du vote traditionnel : participation locale, initiatives citoyennes, engagement numérique… Il offre une vision contemporaine des pratiques d’implication :
+        <br/>
+        • <a target="_blank" href="https://cdn.gulbenkian.pt/wp-content/uploads/2022/03/Relatorio-Sintese-PT-final.pdf" class="text-blue-600 underline">gulbenkian.pt</a> — rapport sur la participation des jeunes au Portugal.
+      </p>
+    </div>
+
+    <!-- English -->
+    <div x-show="currentLanguage === 'en'">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">8) New forms of youth engagement</h3>
+      <p class="text-gray-700">
+        This Portuguese report explores new forms of youth engagement beyond traditional voting: local participation, civic initiatives, digital activism… It offers a contemporary view of how young people get involved:
+        <br/>
+        • <a target="_blank" href="https://cdn.gulbenkian.pt/wp-content/uploads/2022/03/Relatorio-Sintese-PT-final.pdf" class="text-blue-600 underline">gulbenkian.pt</a> — report on youth participation in Portugal.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reference 9 -->
+<div class="border-l-4 border-horizon-blue pl-4">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">9) Représentation des jeunes parmi les élus</h3>
+    <p class="text-gray-700">
+      Si on regarde du côté des élus et des décideurs politiques, les jeunes se font rares. En France, le nombre de maires âgés de moins de 40 ans au moment de leur élection est tombé à un peu moins de 4 % en 2020 (contre 12 % en 1983). Le nombre de maires de plus de 60 ans atteint 55,3 % cette année. Sur 34 888 maires, seulement 171 ont moins de 30 ans :
+      <br/>
+      • <a target="_blank" href="https://www.amf.asso.fr/documents-la-carte-didentite-maires-2020/40307" class="text-blue-600 underline">amf.asso.fr</a> — La carte d'identité des maires de 2020.<br/>
+      • <a target="_blank" href="https://datan.fr/statistiques/deputes-age" class="text-blue-600 underline">datan.fr</a> — Statistiques sur l’âge des députés français (moyenne : 50 ans).
+    </p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">9) Number of young people in political office</h3>
+    <p class="text-gray-700">
+      Young people are significantly underrepresented among elected officials in France. In 2020, fewer than 4% of mayors were under 40 at the time of their election (down from 12% in 1983). Meanwhile, 55.3% of mayors were over 60 years old. Out of 34,888 mayors, only 171 were under 30:
+      <br/>
+      • <a target="_blank" href="https://www.amf.asso.fr/documents-la-carte-didentite-maires-2020/40307" class="text-blue-600 underline">amf.asso.fr</a> — Identity card of French mayors in 2020.<br/>
+      • <a target="_blank" href="https://datan.fr/statistiques/deputes-age" class="text-blue-600 underline">datan.fr</a> — Statistics on the age of French MPs (average: 50 years).
+    </p>
+  </div>
+</div>
+
+<!-- Reference 10 -->
+<div class="border-l-4 border-horizon-blue pl-4">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">10) L’impact des modèles médiatiques sur l’information</h3>
+    <p class="text-gray-700">
+      Plusieurs études montrent que les modèles économiques des médias privilégient souvent le sensationnalisme et les contenus émotionnels au détriment d’une information approfondie. Cela contribue à une compréhension politique limitée chez les jeunes :
+      <br/>
+      • <a target="_blank" href="https://www.pewresearch.org/topic/news-habits-media/media-society/misinformation/" class="text-blue-600 underline">pewresearch.org</a> — recherches sur la désinformation et les tendances médiatiques.<br/>
+      • <a target="_blank" href="https://www.globalmediajournal.com/open-access/the-ethics-of-reporting-balancing-truth-and-sensationalism-in-global-media.pdf" class="text-blue-600 underline">globalmediajournal.com</a> — analyse des dérives médiatiques vers le buzz. Citation intéressante : "Dans la recherche de plus de notes et de lecteurs, les organismes de médias sont souvent tentés de prioriser le sensationnalisme au lieu de l'exactitude."
+    </p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">10) Media business models and the prioritization of buzz</h3>
+    <p class="text-gray-700">
+      Multiple studies show that media business models often prioritize sensationalism and emotional content over deep, informative reporting. This contributes to limited political understanding among youth:
+      <br/>
+      • <a target="_blank" href="https://www.pewresearch.org/topic/news-habits-media/media-society/misinformation/" class="text-blue-600 underline">pewresearch.org</a> — research on misinformation and media trends.<br/>
+      • <a target="_blank" href="https://www.globalmediajournal.com/open-access/the-ethics-of-reporting-balancing-truth-and-sensationalism-in-global-media.pdf" class="text-blue-600 underline">globalmediajournal.com</a> — analysis of media’s shift toward buzz-driven content. Interesting quote : “In the quest for higher ratings and increased readership, media organizations are often tempted to prioritize sensationalism over accuracy.
+    </p>
+  </div>
+</div>
+
+<!-- Reference 11 -->
+<div class="border-l-4 border-horizon-blue pl-4">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">11) Citation d’un jeune citoyen</h3>
+    <p class="text-gray-700">
+      Voir section "plus d'infos" sur le site</p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">11) Quote from a young citizen</h3>
+    <p class="text-gray-700">
+      See "more infos" section on the website
+    </p>
+  </div>
+</div>
+
+<!-- Reference 12 -->
+<div class="border-l-4 border-horizon-blue pl-4">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">12) Concept de l’échelle de participation</h3>
+    <p class="text-gray-700">
+      Le concept de l’échelle de participation illustre les différents niveaux d’implication des jeunes dans les processus décisionnels. Il aide à comprendre comment favoriser une participation authentique :
+      <br/>
+      • <a target="_blank" href="https://mypeer.org.au/design-implementation/youth-participation-2/levels-of-youth-participation/" class="text-blue-600 underline">mypeer.org.au</a> — aperçu des niveaux de participation des jeunes.
+    </p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">12) Ladder of participation concept</h3>
+    <p class="text-gray-700">
+      The ladder of participation concept outlines the varying degrees of youth involvement in decision-making processes. It helps identify ways to promote meaningful engagement:
+      <br/>
+      • <a target="_blank" href="https://mypeer.org.au/design-implementation/youth-participation-2/levels-of-youth-participation/" class="text-blue-600 underline">mypeer.org.au</a> — overview of youth participation levels.
+    </p>
+  </div>
+</div>
+
+<!-- Reference 13 -->
+<div class="border-l-4 border-horizon-blue pl-4 mt-6">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">13) Crise du logement en Europe, en particulier pour les jeunes</h3>
+    <p class="text-gray-700">
+      La crise du logement touche particulièrement les jeunes en Europe, rendant l’accès à un logement abordable de plus en plus difficile. Une citation d’un jeune citoyen est disponible dans la section “plus d’infos” de notre site web.
+    </p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">13) Housing crisis in Europe, especially for young people</h3>
+    <p class="text-gray-700">
+      The housing crisis in Europe disproportionately affects young people, making access to affordable housing increasingly difficult. A quote from a young citizen interview is available in the “more infos” section of our website.
+    </p>
+  </div>
+</div>
+
+<!-- Reference 14 -->
+<div class="border-l-4 border-horizon-blue pl-4">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">14) Santé mentale des jeunes en Europe</h3>
+    <p class="text-gray-700">
+      Les jeunes sont parmi les groupes les plus touchés par les problèmes de santé mentale en Europe. Plusieurs rapports soulignent l’urgence d’agir :
+      <br/>
+      • <a target="_blank" href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2023/751416/EPRS_BRI%282023%29751416_EN.pdf" class="text-blue-600 underline">europarl.europa.eu</a> — rapport du Parlement européen sur la santé mentale, avec un focus sur les jeunes.<br/>
+      • <a target="_blank" href="https://www.nightline.fr/en/news/2025-02-03/student-mental-health-europe-new-report-nightline-europe" class="text-blue-600 underline">nightline.fr</a> — rapport étudiant sur la santé mentale et recommandations pour les établissements d’enseignement supérieur.<br/>
+      • <a target="_blank" href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale/depression-et-anxiete/documents/article/prevalence-des-episodes-depressifs-en-france-chez-les-18-85-ans-resultats-du-barometre-sante-2021?fbclid=IwAR2W4i0Wzt-dA9VztZysqhn0OAEVcJV3qIwJiELKGncJCXyJPzJORpUeRx0" class="text-blue-600 underline">santepubliquefrance.fr</a> — étude française montrant une forte hausse des épisodes dépressifs chez les 18-24 ans entre 2017 et 2021.
+    </p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">14) Mental health of European youth</h3>
+    <p class="text-gray-700">
+      Young people are among the most affected groups when it comes to mental health challenges in Europe. Several reports highlight the urgency of addressing this issue:
+      <br/>
+      • <a target="_blank" href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2023/751416/EPRS_BRI%282023%29751416_EN.pdf" class="text-blue-600 underline">europarl.europa.eu</a> — European Parliament briefing on mental health, emphasizing youth vulnerability.<br/>
+      • <a target="_blank" href="https://www.nightline.fr/en/news/2025-02-03/student-mental-health-europe-new-report-nightline-europe" class="text-blue-600 underline">nightline.fr</a> — student-led report on mental health in higher education and proposed solutions.<br/>
+      • <a target="_blank" href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale/depression-et-anxiete/documents/article/prevalence-des-episodes-depressifs-en-france-chez-les-18-85-ans-resultats-du-barometre-sante-2021?fbclid=IwAR2W4i0Wzt-dA9VztZysqhn0OAEVcJV3qIwJiELKGncJCXyJPzJORpUeRx0" class="text-blue-600 underline">santepubliquefrance.fr</a> — French study showing a sharp rise in depressive episodes among 18–24 year olds between 2017 and 2021.
+    </p>
+  </div>
+</div>
+
+<!-- Reference 15 -->
+<div class="border-l-4 border-horizon-blue pl-4 mt-6">
+  <!-- French -->
+  <div x-show="currentLanguage === 'fr'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">15) Citation d’un jeune citoyen</h3>
+    <p class="text-gray-700">
+      Voir section "plus d'infos" sur le site</p>
+  </div>
+
+  <!-- English -->
+  <div x-show="currentLanguage === 'en'">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">15) Quote from a young citizen</h3>
+    <p class="text-gray-700">
+    See "more infos" section on the website</p>
+  </div>
+</div>
+
+
+
+</div> <!-- References -->
+
         </article>
     </main>
 
